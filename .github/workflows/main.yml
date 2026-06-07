@@ -1,0 +1,40 @@
+name: 自动解密并更新影视源
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # 每天国际时间 2:00（北京时间上午 10:00）自动执行一次
+  workflow_dispatch: # 允许你随时在 GitHub 页面上点击 "Run workflow" 手动触发
+
+jobs:
+  update_config:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. 检查仓库代码
+      uses: actions/checkout@v4
+
+    - name: 2. 初始化 Python 环境
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: 3. 安装必要的依赖库
+      run: |
+        pip install requests
+
+    - name: 4. 运行解密 Python 脚本
+      run: python decrypt.py
+
+    - name: 5. 自动将解密后的本地文件推送到 GitHub 仓库
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        
+        # 检查 tvbox_config.json 文件是否有更新
+        if [ -f "tvbox_config.json" ]; then
+          git add tvbox_config.json
+          # 如果有变化则提交修改，没有变化则跳过，防止 Action 报错
+          git diff --quiet && git diff --staged --quiet || (git commit -m "自动更新：已解密最新的影视订阅源" && git push)
+        else
+          echo "未生成解密文件，跳过提交。"
+        fi
