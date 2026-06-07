@@ -1,5 +1,5 @@
 {
-  "spider": "https://zl.wpscdn.cn/2026/06/07/space_img/76d406e3-87ca-46d6-85ea-1d0751133d07.png;md5;c7764720ee0db87cbe89df807031da74",
+  "spider": "https://zl.wpscdn.cn/2026/06/07/space_img/e0c4dcbc-c0fc-4694-800b-9ff9a0dffd37.png;md5;0ea3c1815f9db5171159a906e8beb3fd",
   "logo": "https://xiuxiu-pro-new.meitudata.com/ai_quality/d68445aeb1e77a379572b30cb9c405e1.png",
   "danmaku": "http://127.0.0.1:2525/danmu?name={name}&epid={episode}",
   "sites": [
@@ -805,6 +805,16 @@
       "key": "MyUc",
       "type": 3,
       "api": "csp_MyUcAmns",
+      "searchable": 0,
+      "filterable": 0,
+      "quickSearch": 0,
+      "changeable": 0
+    },
+    {
+      "name": "📁我的|光雅",
+      "key": "MyGuangya",
+      "type": 3,
+      "api": "csp_MyGuangyaAmns",
       "searchable": 0,
       "filterable": 0,
       "quickSearch": 0,
