@@ -3,77 +3,90 @@ import json
 import re
 import requests
 
+
 def decrypt_tvbox_config(webp_url):
+    """抓取 webp 加密文件并尝试自动解密"""
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
     }
-    
-    print(f"正在访问: {webp_url}")
+
+    print(f"正在从目标地址下载加密文件: {webp_url}...")
     try:
-        session = requests.Session()
-        res = session.get(webp_url, headers=headers, timeout=20, allow_redirects=True)
-        print(f"最终状态码: {res.status_code}，最终URL: {res.url}")
-        content = res.text
-        print(f"内容长度: {len(content)} 字符")
+        res = requests.get(webp_url, headers=headers, timeout=15)
+        if res.status_code != 200:
+            print(f"❌ 下载文件失败，状态码: {res.status_code}")
+            return None
+        content = res.text.strip()
     except Exception as e:
-        print(f"请求失败: {e}")
+        print(f"❌ 请求失败: {e}")
         return None
 
-    # 增强版 Base64 提取（处理拆分、换行、干扰字符）
-    print("正在尝试增强 Base64 提取...")
-    # 更宽松的模式，允许中间有少量干扰
-    base64_blocks = re.findall(r'[A-Za-z0-9+/=]{200,}', content)
-    
-    for i, block in enumerate(sorted(base64_blocks, key=len, reverse=True)):
-        try:
-            # 清理可能的干扰
-            cleaned = re.sub(r'[^A-Za-z0-9+/=]', '', block)
-            if len(cleaned) < 100:
-                continue
-                
-            # 补全 padding
-            padding = len(cleaned) % 4
-            if padding:
-                cleaned += "=" * (4 - padding)
-            
-            decoded_bytes = base64.b64decode(cleaned, validate=False)
-            decoded_str = decoded_bytes.decode('utf-8', errors='ignore')
-            
-            # 查找 JSON 对象
-            json_match = re.search(r'(\{[\s\S]*?\})', decoded_str, re.DOTALL)
-            if json_match:
-                json_str = json_match.group(1)
-                config = json.loads(json_str)
-                print(f"🎉 第 {i+1} 个块解密成功！")
-                return config
-        except:
-            continue
+    print("文件下载成功，正在尝试解密...")
 
-    # 兜底：尝试找最大的 {} 结构
-    print("尝试兜底 JSON 提取...")
+    # 1. 尝试直接作为 JSON 解析（防止根本没加密，只是换了后缀）
     try:
-        full_match = re.search(r'(\{[\s\S]{1000,}?)\}', content, re.DOTALL)
-        if full_match:
-            possible = full_match.group(1) + '}'
-            # 尝试清理后解析
-            possible = re.sub(r'[^ -~]', '', possible)  # 移除不可见字符
-            config = json.loads(possible)
-            return config
+        return json.loads(content)
     except:
         pass
 
-    print("❌ 本地所有解密方法失败")
+    # 2. 如果是 Base64 变体加密，或者包含特殊字符，先进行清洗
+    # 绝大多数 TVBox 工具的前端解密核心就是将数据剔除乱码后进行 Base64 解码
+    try:
+        # 移除可能存在的伪装图片头等杂质，只保留合法 Base64 字符
+        base64_pattern = re.compile(r"[A-Za-z0-9+/=]+")
+        blocks = base64_pattern.findall(content)
+        if blocks:
+            # 拼接最长的一段，或者尝试全拼接
+            longest_block = max(blocks, key=len)
+            # 补齐 Base64 填充
+            missing_padding = len(longest_block) % 4
+            if missing_padding:
+                longest_block += "=" * (4 - missing_padding)
+
+            decoded_bytes = base64.b64decode(longest_block)
+            decoded_str = decoded_bytes.decode("utf-8", errors="ignore")
+
+            # 提取其中完整的 {} JSON 结构
+            json_match = re.search(r"\{.*\}", decoded_str, re.DOTALL)
+            if json_match:
+                return json.loads(json_match.group(0))
+    except Exception as e:
+        print(f"⚠️ 自定义 Base64 解密尝试失败: {e}，将尝试调用解密网站接口...")
+
+    # 3. 如果本地算法没解开，直接调用 2015888.xyz 网站背后的通用 API 接口
+    # 模拟请求它的后台解密引擎
+    api_url = "https://master.2015888.xyz/api/jiemi"  # 对应 /jiemi/ 页面的公共后台
+    # 如果抓包发现是直接请求另一个接口，也可以替换它
+    payload = {"url": webp_url, "content": content}
+
+    try:
+        api_res = requests.post(
+            "https://master.2015888.xyz/jiemi/", data=payload, headers=headers
+        )
+        # 如果网站是用传统的 Form 表单或者特定的参数，可以通过正则匹配它返回的 textarea 内容
+        match = re.search(r"<textarea[^>]*>(.*?)</textarea>", api_res.text, re.S)
+        if match:
+            return json.loads(match.group(1).strip())
+    except:
+        pass
+
+    # 4. 后备兜底：由于你在上一步截图里已经能完美显示了，说明目前该网站纯支持外部调用
+    # 如果遇到特殊魔改的 AES 加密，我们可以通过传入内容让它返回
+    print("❌ 无法自动还原，请检查该加密源是否更新了高强度的自定义Key。")
     return None
 
 
 if __name__ == "__main__":
-    target_url = "http://我不是.摸鱼儿.top"
-    config = decrypt_tvbox_config(target_url)
-    
-    if config:
-        with open("tvbox_config1.json", "w", encoding="utf-8") as f:
-            json.dump(config, f, ensure_ascii=False, indent=2)
-        print(f"✅ 解密成功！已保存到 tvbox_config1.json")
-        print(f"站点数量: {len(config.get('sites', []))}")
+    # 你的目标 webp 订阅源
+    target_url = "https://www.xn--ihq545aq7p.com/"
+
+    config_data = decrypt_tvbox_config(target_url)
+
+    if config_data:
+        # 规范化保存为本地 JSON 文件
+        output_file = "tvbox_config1.json"
+        with open(output_file, "w", encoding="utf-8") as f:
+            json.dump(config_data, f, ensure_ascii=False, indent=2)
+        print(f"🎉 成功！解密后的影视源已保存到本地: {output_file}")
     else:
-        print("❌ 解密失败")
+        print("❌ 解密失败。")
