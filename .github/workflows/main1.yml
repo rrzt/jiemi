@@ -1,0 +1,55 @@
+name: 自动解密_Spider下载_生成新Jar配置
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *' # 每天自动运行一次
+  workflow_dispatch: # 支持手动点击触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+
+    - name: 设置 Python 环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: 安装依赖库
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: 1. 执行原有的解密脚本
+      run: |
+        python decrypt1.py 
+
+    - name: 2. 执行 Spider 实时检测与下载
+      run: |
+        python download_spider1.py
+
+    - name: 3. 读取旧配置并生成带有专属 jar 的全新 JSON
+      run: |
+        python add_jar_to_sites1.py
+
+    - name: 4. 将所有更新统一提交推送到仓库
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # 将原始 json、新生成的修改版 json 以及下载的 png 放入暂存区
+        git add tvbox_config.json tvbox_modified.json aowu.png
+        
+        # 检查是否有文件发生变化，有变化才提交
+        if ! git diff --cached --quiet; then
+          git commit -m "自动更新：保持原配置，并独立生成全新的 tvbox_modified.json 以及最新 aowu.png"
+          git push
+        else
+          echo "所有数据均未发生变化，无需提交。"
+        fi
