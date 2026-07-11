@@ -50,7 +50,7 @@ jobs:
         
         # 你的 GitHub 仓库对应的 moyu.jar 纯净链接（不带 MD5）
         # 【请注意】：请把下面两行的“你的GitHub用户名”和“你的仓库名”修改为你实际的名称
-        GITHUB_USER = "woshishiq1"
+        GITHUB_USER = "rrzt"
         GITHUB_REPO = "jiemi"
         
         BASE_JAR_URL = f"https://ghfast.top/https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/main/moyu.jar"
