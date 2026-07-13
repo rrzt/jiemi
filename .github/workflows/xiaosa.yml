@@ -1,0 +1,147 @@
+name: 生成 潇洒.json自动调用API解密并注入Sites
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   
+    - cron: '0 0 * * *' # 每天早上 8:00 自动运行
+  workflow_dispatch:     # 支持手动点击按钮运行
+
+jobs:
+  decrypt_and_process:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 检出仓库代码
+      uses: actions/checkout@v4
+
+    - name: 1. 请求解密接口并保存基础 JSON，按需修改源地址
+      run: |
+        curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
+          -H "Content-Type: application/x-www-form-urlencoded" \
+          -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+          -d "url=https://9877.kstore.space/ONE/one.json" \
+          -o xiaosa_config.json
+        
+       #  -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
+
+
+       
+    - name: 2. 自动下载最新的真实 jar 并重命名为 xiaosa.jar
+      run: |
+        if [ -f "xiaosa_config.json" ] && grep -q -E "spider|sites" xiaosa_config.json; then
+          # 动态提取原作者最新的 jar 链接
+          JAR_URL1=$(grep -oP '"spider"\s*:\s*"\K[^"]+' xiaosa_config.json | cut -d';' -f1)
+          
+          # 固定基础域名，按需修改
+          BASE_DOMAIN="https://raw.githubusercontent.com/IY-CPU/IY/main/"
+          # 分三种情况给 JAR_URL 赋值
+          if [[ "$JAR_URL1" == http* ]]; then
+            # 情况2：完整http链接 / 情况3：带;截断后的完整链接
+            JAR_URL="$JAR_URL1"
+          else
+            # 情况1：./xxx.jar 相对路径，去除./拼接域名
+            FILE_NAME="${JAR_URL1#./}"
+            JAR_URL="${BASE_DOMAIN}${FILE_NAME}"
+          fi
+ 
+          
+          if [ -n "$JAR_URL" ] && [[ "$JAR_URL" == http* ]]; then
+            echo "成功抓取到远程 JAR 地址: $JAR_URL"
+            curl -L "$JAR_URL" -o xiaosa.jar
+            echo "已成功将最新的 jar 下载并重命名为 xiaosa.jar"
+          else
+            echo "提示：未在配置中找到远程 JAR 链接。"
+          fi
+        else
+          echo "【错误】解密出来的基础 JSON 结构不合法！"
+          exit 1
+        fi
+
+    - name: 3. 运行内置 Python 逻辑：注入 sites 并生成最终的 xiaosa.json
+      shell: python
+      run: |
+        import json
+        import os
+
+        INPUT_JSON = "xiaosa_config.json"
+        OUTPUT_JSON = "xiaosa.json"
+        
+        # 你的 GitHub 仓库对应的 xiaosa.jar 纯净链接（不带 MD5）
+        # 【请注意】：按需修改，请把下面两行的“你的GitHub用户名”和“你的仓库名”修改为你实际的名称
+        GITHUB_USER = "rrzt"
+        GITHUB_REPO = "jiemi"
+        BASE_JAR_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/main/xiaosa.jar"
+
+        if not os.path.exists(INPUT_JSON):
+            print(f"[-] 未找到源文件 {INPUT_JSON}")
+            exit(1)
+
+        with open(INPUT_JSON, "r", encoding="utf-8") as f:
+            config_data = json.load(f)
+
+        # A. 顺便把最顶层的顶级 spider 链接也改成你自己的 xiaosa.jar
+        config_data["spider"] = BASE_JAR_URL
+        print("[+] 已更新顶级 spider 链接")
+
+        # B. 遍历 sites 列表，无 jar 或 jar 为空的站点自动注入
+        sites_list = config_data.get("sites", [])
+        if isinstance(sites_list, list):
+            updated_count = 0
+            skipped_count = 0
+            
+            for site in sites_list:
+                if isinstance(site, dict):
+                    site_name = site.get("name", "未知站点")
+                    current_jar = site.get("jar")
+
+                    # 如果已有有效的 jar 地址则跳过
+                    if current_jar and isinstance(current_jar, str) and current_jar.strip():
+                        skipped_count += 1
+                        continue
+
+                    # 没有 jar 或为空 → 注入你自己的纯净链接
+                    site["jar"] = BASE_JAR_URL
+                    updated_count += 1
+                    
+                    # 【顺序调整】按需修改，所有站点jar字段处理完毕后，统一定义基础地址
+                    BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
+    
+                    # 通用替换函数：将以 ./ 开头的字符串替换为 BASE_URL 拼接路径
+                    def replace_dot_slash(val: str) -> str:
+                        s = val.strip()
+                        if s.startswith("./"):
+                            return BASE_URL + s.lstrip("./")
+                        return val
+
+                    # 遍历所有站点，对每一项所有字符串值统一替换 ./
+                    for site in sites_list:
+                        if isinstance(site, dict):
+                            for k, v in site.items():
+                                if isinstance(v, str):
+                                    site[k] = replace_dot_slash(v)
+
+
+            print(f"[+] Sites 注入完成：更新了 {updated_count} 个站点，跳过了 {skipped_count} 个已有 jar 的站点")
+
+        # C. 统一写出为最终文件名 xiaosa.json
+        with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+            json.dump(config_data, f, indent=2, ensure_ascii=False)
+        print(f"[+] 最终配置文件已成功生成: {OUTPUT_JSON}")
+
+    - name: 4. 强行提交最新的 xiaosa.json 和 xiaosa.jar 到仓库
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        
+        # 强行添加，确保绕过任何 .gitignore 规则
+        if [ -f "xiaosa.json" ]; then git add -f xiaosa.json; fi
+        if [ -f "xiaosa.jar" ]; then git add -f xiaosa.jar; fi
+        
+        # 只要代码、配置或 jar 包有任何风吹草动，Git 都会自动捕捉并更新
+        if ! git diff --cached --quiet; then
+          git commit -m "自动同步最新xiaosa.json与xiaosa.jar: $(date +'%Y-%m-%d %H:%M:%S')"
+          git push origin HEAD
+          echo "【成功】xiaosa.json 和 xiaosa.jar 已成功推送到你的远程仓库！"
+        else
+          echo "【提示】内容与上一版本完全一致，无需重复提交。"
+        fi
