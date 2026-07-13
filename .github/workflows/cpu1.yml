@@ -103,6 +103,23 @@ jobs:
                     # 没有 jar 或为空 → 注入你自己的纯净链接
                     site["jar"] = BASE_JAR_URL
                     updated_count += 1
+                    
+                    # 【顺序调整】所有站点jar字段处理完毕后，统一定义基础地址
+                    BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/main/"
+    
+                    # 通用替换函数：将以 ./ 开头的字符串替换为 BASE_URL 拼接路径
+                    def replace_dot_slash(val: str) -> str:
+                    s = val.strip()
+                   if s.startswith("./"):
+                    return BASE_URL + s.lstrip("./")
+                    return val
+
+                    # 遍历所有站点，对每一项所有字符串值统一替换 ./
+                      for site in sites_list:
+                          if isinstance(site, dict):
+                              for k, v in site.items():
+                                  if isinstance(v, str):
+                                      site[k] = replace_dot_slash(v)
 
             print(f"[+] Sites 注入完成：更新了 {updated_count} 个站点，跳过了 {skipped_count} 个已有 jar 的站点")
 
