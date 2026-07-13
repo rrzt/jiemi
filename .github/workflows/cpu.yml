@@ -13,31 +13,23 @@ jobs:
     steps:
     - name: 检出仓库代码
       uses: actions/checkout@v4
+    - name: 设置 Python 环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
 
-    - name: 1. 请求解密接口并保存基础 JSON
+    - name: 安装依赖库
       run: |
-        curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
-          -H "Content-Type: application/x-www-form-urlencoded" \
-          -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-          -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/天神IY.png" \
-          -o cpu_config.json
+        python -m pip install --upgrade pip
+        pip install requests
+ 
+    - name: 1. 执行原有的解密脚本
+      run: |
+        python decrypt_cpu.py
 
-    - name: 2. 自动下载最新的真实 jar 并重命名为 cpu.jar
+    - name: 2. 执行 Spider 实时检测与下载
       run: |
-        if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
-          # 动态提取原作者最新的 jar 链接
-          JAR_URL=$(grep -oP '"spider"\s*:\s*"\K[^"]+' cpu_config.json | cut -d';' -f1)
-          if [ -n "$JAR_URL" ] && [[ "$JAR_URL" == http* ]]; then
-            echo "成功抓取到远程 JAR 地址: $JAR_URL"
-            curl -L "$JAR_URL" -o cpu.jar
-            echo "已成功将最新的 jar 下载并重命名为 cpu.jar"
-          else
-            echo "提示：未在配置中找到远程 JAR 链接。"
-          fi
-        else
-          echo "【错误】解密出来的基础 JSON 结构不合法！"
-          exit 1
-        fi
+        python download_spider_cpu.py
 
     - name: 3. 运行内置 Python 逻辑：注入 sites 并生成最终的 cpu.json
       shell: python
@@ -53,7 +45,7 @@ jobs:
         GITHUB_USER = "rrzt"
         GITHUB_REPO = "jiemi"
         
-        BASE_JAR_URL = f"https://gh-proxy.org/https://github.com/{GITHUB_USER}/{GITHUB_REPO}/main/moyu.jar"
+        BASE_JAR_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/main/cpu.jar"
 
         if not os.path.exists(INPUT_JSON):
             print(f"[-] 未找到源文件 {INPUT_JSON}")
