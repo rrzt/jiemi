@@ -13,7 +13,7 @@
       "searchable": 0,
       "changeable": 0,
       "indexs": 0,
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/天神小屋.png",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/天神小屋.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
@@ -34,8 +34,8 @@
       "key": "路漫漫",
       "name": "🌈路漫漫｜动漫导航",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/drpy2.min.js",
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/路漫漫.png",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/路漫漫.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
@@ -77,7 +77,7 @@
       "key": "JD",
       "name": "❤JD｜4K测试",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/jd4k.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/jd4k.js",
       "ext": "https://qp.69mini.com/api.php/app/",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
@@ -85,7 +85,7 @@
       "key": "极影",
       "name": "❤极影｜4K测试",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/jy.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/jy.js",
       "ext": "http://cmsyun2.qijiyun.vip/api.php/app/",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
@@ -107,7 +107,7 @@
       "key": "爱营",
       "name": "♨️爱影｜4K线路",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/get.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/get.js",
       "ext": {
         "host": "https://aysappto.oss-cn-chengdu.aliyuncs.com/q23.txt",
         "key": "nzEqOgYk3QzHuEP8",
@@ -131,7 +131,7 @@
       "key": "首发",
       "name": "♨️首发｜4K线路",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/get.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/get.js",
       "ext": {
         "host": "https://yun-1316442804.cos.ap-guangzhou.myqcloud.com/601.txt",
         "key": "FTgP4Gq8zPiqbt7M",
@@ -145,14 +145,14 @@
       "key": "fy",
       "name": "♨️枫叶｜4K线路",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/fy.py",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/fy.py",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "动漫天堂",
       "name": "♨️漫堂｜4K线路",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/get.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/get.js",
       "ext": {
         "host": "https://yun-1316442804.cos.ap-guangzhou.myqcloud.com/500.txt",
         "key": "1vi33w2pAHEm8Y6U",
@@ -179,7 +179,7 @@
       "key": "山楂",
       "name": "♨️山楂｜4K线路",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/shanzha.py",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/shanzha.py",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
@@ -193,7 +193,7 @@
       "key": "火云",
       "name": "♨️火云｜4k线路",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/hy.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/hy.js",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
@@ -279,7 +279,7 @@
       "key": "爱看剧",
       "name": "🌀看剧｜1920",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/AppToV5.py",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/AppToV5.py",
       "ext": "http://43.248.117.123:4680",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
@@ -331,7 +331,7 @@
       "key": "四叶草",
       "name": "🌀幸运｜1920",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/get.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/get.js",
       "ext": {
         "host": "https://yzysap.oss-cn-hangzhou.aliyuncs.com/sss.txt",
         "key": "wNCwbXzr0Bm6cS2C",
@@ -366,7 +366,7 @@
       "key": "雄鹰",
       "name": "🌀雄鹰｜1920",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/get.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/get.js",
       "ext": {
         "host": "https://xinlanyinghb.oss-cn-wuhan-lr.aliyuncs.com/xly.txt",
         "key": "ca94b06ca359d80e",
@@ -402,7 +402,7 @@
       "key": "葫芦",
       "name": "🌀葫芦｜1920",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/get.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/get.js",
       "ext": {
         "host": "https://mobile-1251126973.cos.ap-guangzhou.myqcloud.com/maccos_config.txt",
         "key": "8R33VQSxzmCaHpEX",
@@ -416,7 +416,7 @@
       "key": "华数",
       "name": "🌀华数｜1920",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/华数.py",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/华数.py",
       "changeable": 1,
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
@@ -424,61 +424,61 @@
       "key": "藤藤",
       "name": "🌀藤藤｜1920",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/drpy2.min.js",
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/藤藤.png",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/藤藤.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "茫茫",
       "name": "🌀茫茫｜1920",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/drpy2.min.js",
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/茫茫.png",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/茫茫.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "小优",
       "name": "🌀小优｜1280",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/drpy2.min.js",
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/小优.png",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/小优.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "小爱",
       "name": "🌀小爱｜1280",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/drpy2.min.js",
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/小爱.png",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/小爱.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "小哩",
       "name": "🌀小哩｜1280",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/drpy2.min.js",
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/小哩.png",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/小哩.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "七猫短剧",
       "name": "🎬七猫｜短剧",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/qmdj.py",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/qmdj.py",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "七星短剧",
       "name": "🎬七星丨短剧",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/qxdj.py",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/qxdj.py",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "百度短剧",
       "name": "🎬百度丨短剧",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/bddj.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/bddj.js",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 1,
@@ -488,7 +488,7 @@
       "key": "聚合短剧",
       "name": "🎬聚合丨短剧",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/jhdj.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/jhdj.js",
       "searchable": 1,
       "quickSearch": 0,
       "filterable": 1,
@@ -534,7 +534,7 @@
       "key": "星芽短剧",
       "name": "🎬星芽｜短剧",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/星芽短剧.py",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/星芽短剧.py",
       "searchable": 1,
       "changeable": 1,
       "quickSearch": 1,
@@ -786,7 +786,7 @@
       "key": "喵呜次元",
       "name": "🌈喵呜｜动漫",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/mwcy.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/mwcy.js",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
@@ -836,8 +836,8 @@
       "key": "去看吧",
       "name": "🌈去看｜动漫",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/drpy2.min.js",
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/去看吧.png",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/去看吧.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
@@ -866,7 +866,7 @@
       "name": "🌈巴士｜动漫",
       "type": 3,
       "api": "csp_XYQHiker",
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/巴士动漫.png",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/巴士动漫.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
@@ -895,21 +895,21 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/电影港.png",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/电影港.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "爱听音乐",
       "name": "📻爱听｜音乐",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/爱听音乐.py",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/爱听音乐.py",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "听了么",
       "name": "📻听歌｜音乐",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/tlm.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/tlm.js",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
@@ -936,16 +936,16 @@
       "key": "凤凰FM",
       "name": "📻凤凰┃FM",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/drpy2.min.js",
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/凤凰FM.png",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/凤凰FM.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "随身评书",
       "name": "📻随身┃评书",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/drpy2.min.js",
-      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/随身评书.png",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/drpy2.min.js",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/随身评书.png",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
@@ -1006,14 +1006,14 @@
       "key": "网络直播",
       "name": "📺网络｜点播",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/网络直播.py",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/网络直播.py",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
       "key": "哔哩直播",
       "name": "📺哔哩｜点播",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/lib/哔哩直播.py",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/lib/哔哩直播.py",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar"
     },
     {
