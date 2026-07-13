@@ -109,10 +109,10 @@ jobs:
     
                     # 通用替换函数：将以 ./ 开头的字符串替换为 BASE_URL 拼接路径
                     def replace_dot_slash(val: str) -> str:
-                    s = val.strip()
-                   if s.startswith("./"):
-                    return BASE_URL + s.lstrip("./")
-                    return val
+                        s = val.strip()
+                        if s.startswith("./"):
+                            return BASE_URL + s.lstrip("./")
+                        return val
 
                     # 遍历所有站点，对每一项所有字符串值统一替换 ./
                       for site in sites_list:
