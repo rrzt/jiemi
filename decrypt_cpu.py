@@ -78,7 +78,8 @@ def decrypt_tvbox_config(webp_url):
 
 if __name__ == "__main__":
     # 你的目标 webp 订阅源
-    target_url = "https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json"
+    #target_url = "https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json"
+    target_url = "https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png"
 
     config_data = decrypt_tvbox_config(target_url)
 
