@@ -1,4 +1,4 @@
-name: 自动调用API解密并注入Sites生成cpu.json
+name: 生成cpu.json自动调用API解密并注入Sites
 
 on:
   schedule:
