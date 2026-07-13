@@ -21,11 +21,7 @@ jobs:
           -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
           -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
           -o cpu_config.json
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        
-        # 强行添加，确保绕过任何 .gitignore 规则
-        if [ -f "cpu_config.json" ]; then git add -f cpu_config.json; fi
+       
        #   -d "url=https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json" \
 
 
@@ -34,7 +30,21 @@ jobs:
       run: |
         if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
           # 动态提取原作者最新的 jar 链接
-          JAR_URL=$(grep -oP '"spider"\s*:\s*"\K[^"]+' cpu_config.json | cut -d';' -f1)
+          JAR_URL1=$(grep -oP '"spider"\s*:\s*"\K[^"]+' cpu_config.json | cut -d';' -f1)
+          
+          # 固定基础域名，按需修改
+          BASE_DOMAIN="https://raw.githubusercontent.com/IY-CPU/IY/main/"
+          # 分三种情况给 JAR_URL 赋值
+          if [[ "$JAR_URL1" == http* ]]; then
+            # 情况2：完整http链接 / 情况3：带;截断后的完整链接
+            JAR_URL="$JAR_URL1"
+          else
+            # 情况1：./xxx.jar 相对路径，去除./拼接域名
+            FILE_NAME="${JAR_URL1#./}"
+            JAR_URL="${BASE_DOMAIN}${FILE_NAME}"
+          fi
+ 
+          
           if [ -n "$JAR_URL" ] && [[ "$JAR_URL" == http* ]]; then
             echo "成功抓取到远程 JAR 地址: $JAR_URL"
             curl -L "$JAR_URL" -o cpu.jar
