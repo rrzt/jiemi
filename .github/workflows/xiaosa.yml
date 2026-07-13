@@ -136,7 +136,7 @@ jobs:
         # 强行添加，确保绕过任何 .gitignore 规则
         if [ -f "xiaosa.json" ]; then git add -f xiaosa.json; fi
         if [ -f "xiaosa.jar" ]; then git add -f xiaosa.jar; fi
-        
+        if [ -f "xiaosa_config.json" ]; then git add -f xiaosa_config.json; fi
         # 只要代码、配置或 jar 包有任何风吹草动，Git 都会自动捕捉并更新
         if ! git diff --cached --quiet; then
           git commit -m "自动同步最新xiaosa.json与xiaosa.jar: $(date +'%Y-%m-%d %H:%M:%S')"
