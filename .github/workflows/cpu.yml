@@ -1,4 +1,4 @@
-name: 生成cpu.json自动调用API解密并注入Sites
+name: 生成cpu.json本地解密_Spider下载_生成新Jar配置
 
 on:
   schedule:
