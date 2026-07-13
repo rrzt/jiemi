@@ -105,7 +105,7 @@ jobs:
                     updated_count += 1
                     
                     # 【顺序调整】所有站点jar字段处理完毕后，统一定义基础地址
-                    BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/https://raw.githubusercontent.com/IY-CPU/IY/main/"
+                    BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
     
                     # 通用替换函数：将以 ./ 开头的字符串替换为 BASE_URL 拼接路径
                     def replace_dot_slash(val: str) -> str:
