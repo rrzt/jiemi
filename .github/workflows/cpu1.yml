@@ -14,7 +14,7 @@ jobs:
     - name: 检出仓库代码
       uses: actions/checkout@v4
 
-    - name: 1. 请求解密接口并保存基础 JSON
+    - name: 1. 请求解密接口并保存基础 JSON，按需修改源地址
       run: |
         curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
           -H "Content-Type: application/x-www-form-urlencoded" \
@@ -67,10 +67,9 @@ jobs:
         OUTPUT_JSON = "cpu.json"
         
         # 你的 GitHub 仓库对应的 cpu.jar 纯净链接（不带 MD5）
-        # 【请注意】：请把下面两行的“你的GitHub用户名”和“你的仓库名”修改为你实际的名称
+        # 【请注意】：按需修改，请把下面两行的“你的GitHub用户名”和“你的仓库名”修改为你实际的名称
         GITHUB_USER = "rrzt"
         GITHUB_REPO = "jiemi"
-        
         BASE_JAR_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/main/cpu.jar"
 
         if not os.path.exists(INPUT_JSON):
@@ -104,7 +103,7 @@ jobs:
                     site["jar"] = BASE_JAR_URL
                     updated_count += 1
                     
-                    # 【顺序调整】所有站点jar字段处理完毕后，统一定义基础地址
+                    # 【顺序调整】按需修改，所有站点jar字段处理完毕后，统一定义基础地址
                     BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
     
                     # 通用替换函数：将以 ./ 开头的字符串替换为 BASE_URL 拼接路径
