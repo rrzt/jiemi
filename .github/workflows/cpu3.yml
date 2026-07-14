@@ -172,9 +172,3 @@ jobs:
         fi
 
 
-     - name: 4.移动生成文件到根目录
-       run: |
-        cd $GITHUB_WORKSPACE        # 确保在根目录
-        if [ -f "tool/cpu.json" ]; then mv -vf tool/cpu.json ./; fi
-        if [ -f "tool/cpu.jar" ]; then mv -vf tool/cpu.jar ./; fi
-
