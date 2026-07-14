@@ -35,7 +35,14 @@ jobs:
           
           #cat cpu_config.json
           python build_local.py cpu_config.json output
-          \cp -pdr output/* ../
+          \cp -pdr output/* ../xiaosa/
+          python xiao.py ../xiaosa/api.json dianshi.json
+          python xiao.py ../xiaosa/api.json jsm.json
+          python copy_xbpq.py dianshi_with_app_sites.json
+          \cp -pdr dianshi_with_app_sites.json ../dianshi.json
+          \cp -pdr jsm_with_app_sites.json ../jsm.json
+          \cp -pdr ../xiaosa/spider.jar ../jar/spider.jar
+          rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
           cd ../
  
         
