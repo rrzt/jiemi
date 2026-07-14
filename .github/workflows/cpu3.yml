@@ -171,15 +171,30 @@ jobs:
           echo "【提示】内容与上一版本完全一致，无需重复提交。"
         fi
 
-    - name: 移动生成文件到根目录（先移动）
+    - name: 移动生成文件到根目录并提交
       run: |
+        # 1. 切换到仓库根目录
         cd $GITHUB_WORKSPACE
+    
+        # 2. 移动文件（如果存在）
         if [ -f "tool/cpu.json" ]; then mv -vf tool/cpu.json ./; fi
         if [ -f "tool/cpu.jar" ]; then mv -vf tool/cpu.jar ./; fi
+    
+        # 3. 配置 Git 用户信息
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        
+    
+        # 4. 添加根目录下的新文件（强制添加，绕过 .gitignore）
         if [ -f "cpu.json" ]; then git add -f cpu.json; fi
         if [ -f "cpu.jar" ]; then git add -f cpu.jar; fi
+    
+        # 5. 如果有变更，则提交并推送
+        if ! git diff --cached --quiet; then
+          git commit -m "移动 cpu.json 和 cpu.jar 到根目录: $(date +'%Y-%m-%d %H:%M:%S')"
+          git push origin HEAD
+          echo "【成功】根目录下的 cpu.json 和 cpu.jar 已推送到远程仓库！"
+        else
+          echo "【提示】根目录文件无变化，跳过提交。"
+        fi
 
 
