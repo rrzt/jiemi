@@ -81,6 +81,7 @@ jobs:
 
 
     - name: 3. 运行内置 Python 逻辑：注入 sites 并生成最终的 cpu.json
+      working-directory: tool/
       shell: python
       run: |
         
