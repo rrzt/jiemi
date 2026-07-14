@@ -33,14 +33,14 @@ jobs:
           # 动态提取原作者最新的 jar 链接
           JAR_URL1=$(grep -oP '"spider"\s*:\s*"\K[^"]+' cpu_config.json | cut -d';' -f1)
           
-          # 固定基础域名，按需修改
+          # 固定基础域名，针对./本地化赋路径，按需修改
           BASE_DOMAIN="https://raw.githubusercontent.com/IY-CPU/IY/main/"
           # 分三种情况给 JAR_URL 赋值
           if [[ "$JAR_URL1" == http* ]]; then
-            # 情况2：完整http链接 / 情况3：带;截断后的完整链接
+            # 情况2：完整http链接 /  和 情况3：带;截断后的完整链接
             JAR_URL="$JAR_URL1"
           else
-            # 情况1：./xxx.jar 相对路径，去除./拼接域名
+            # 情况1：./xxx.jar 相对路径，去除./拼接 已定义的基础域名
             FILE_NAME="${JAR_URL1#./}"
             JAR_URL="${BASE_DOMAIN}${FILE_NAME}"
           fi
