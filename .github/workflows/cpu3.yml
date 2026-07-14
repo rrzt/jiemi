@@ -1,0 +1,166 @@
+name: 生成cpu.json本地解密_Spider下载_生成新Jar配置
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   
+    - cron: '0 0 * * *' # 每天早上 8:00 自动运行
+  workflow_dispatch:     # 支持手动点击按钮运行
+
+jobs:
+  decrypt_and_process:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 检出仓库代码
+      uses: actions/checkout@v4
+    - name: 设置 Python 环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: 安装依赖库
+      run: |
+        cd tool/
+        pwd
+        python -m pip install --upgrade pip
+        #pip install requests
+        pip install requests demjson3 pycryptodome
+ 
+    - name: 1. 执行原有的解密脚本
+      run: |
+         #python decrypt_cpu.py
+         #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
+          python tvbox.py https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json cpu_config.json dec 
+          #cat tool/debug_raw.txt
+          #cat cpu_config.json
+          python build_local.py xs.json output
+          \cp -pdr output/* ../xiaosa/
+          python xiao.py ../xiaosa/api.json dianshi.json
+          python xiao.py ../xiaosa/api.json jsm.json
+          python copy_xbpq.py dianshi_with_app_sites.json
+          \cp -pdr dianshi_with_app_sites.json ../dianshi.json
+          \cp -pdr jsm_with_app_sites.json ../jsm.json
+          \cp -pdr ../xiaosa/spider.jar ../jar/spider.jar
+          rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
+          cd ../
+        shell: bash
+ 
+        
+    - name: 2. 执行 Spider 实时检测与下载
+      run: |
+        if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
+          # 动态提取原作者最新的 jar 链接
+          JAR_URL1=$(grep -oP '"spider"\s*:\s*"\K[^"]+' cpu_config.json | cut -d';' -f1)
+          
+          # 固定基础域名，针对./本地化赋路径，按需修改
+          BASE_DOMAIN="https://raw.githubusercontent.com/IY-CPU/IY/main/"
+          # 分三种情况给 JAR_URL 赋值
+          if [[ "$JAR_URL1" == http* ]]; then
+            # 情况2：完整http链接 /  和 情况3：带;截断后的完整链接
+            JAR_URL="$JAR_URL1"
+          else
+            # 情况1：./xxx.jar 相对路径，去除./拼接 已定义的基础域名
+            FILE_NAME="${JAR_URL1#./}"
+            JAR_URL="${BASE_DOMAIN}${FILE_NAME}"
+          fi
+ 
+          
+          if [ -n "$JAR_URL" ] && [[ "$JAR_URL" == http* ]]; then
+            echo "成功抓取到远程 JAR 地址: $JAR_URL"
+            curl -L "$JAR_URL" -o cpu.jar
+            echo "已成功将最新的 jar 下载并重命名为 cpu.jar"
+          else
+            echo "提示：未在配置中找到远程 JAR 链接。"
+          fi
+        else
+          echo "【错误】解密出来的基础 JSON 结构不合法！"
+          exit 1
+        fi
+
+
+    - name: 3. 运行内置 Python 逻辑：注入 sites 并生成最终的 cpu.json
+      shell: python
+      run: |
+        import json
+        import os
+
+        INPUT_JSON = "cpu_config.json"
+        OUTPUT_JSON = "cpu.json"
+        
+        # 你的 GitHub 仓库对应的 cpu.jar 纯净链接（不带 MD5）
+        # 【请注意】：请把下面两行的“你的GitHub用户名”和“你的仓库名”修改为你实际的名称
+        GITHUB_USER = "rrzt"
+        GITHUB_REPO = "jiemi"
+        
+        BASE_JAR_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/main/cpu.jar"
+
+        if not os.path.exists(INPUT_JSON):
+            print(f"[-] 未找到源文件 {INPUT_JSON}")
+            exit(1)
+
+        with open(INPUT_JSON, "r", encoding="utf-8") as f:
+            config_data = json.load(f)
+
+        # A. 顺便把最顶层的顶级 spider 链接也改成你自己的 cpu.jar
+        config_data["spider"] = BASE_JAR_URL
+        print("[+] 已更新顶级 spider 链接")
+
+        # B. 遍历 sites 列表，无 jar 或 jar 为空的站点自动注入
+        sites_list = config_data.get("sites", [])
+        if isinstance(sites_list, list):
+            updated_count = 0
+            skipped_count = 0
+            
+            for site in sites_list:
+                if isinstance(site, dict):
+                    site_name = site.get("name", "未知站点")
+                    current_jar = site.get("jar")
+
+                    # 如果已有有效的 jar 地址则跳过
+                    if current_jar and isinstance(current_jar, str) and current_jar.strip():
+                        skipped_count += 1
+                        continue
+
+                    # 没有 jar 或为空 → 注入你自己的纯净链接
+                    site["jar"] = BASE_JAR_URL
+                    updated_count += 1
+                    # 【顺序调整】所有站点jar字段处理完毕后，统一定义基础地址
+                    BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
+    
+                    # 通用替换函数：将以 ./ 开头的字符串替换为 BASE_URL 拼接路径
+                    def replace_dot_slash(val: str) -> str:
+                        s = val.strip()
+                        if s.startswith("./"):
+                            return BASE_URL + s.lstrip("./")
+                        return val
+
+                    # 遍历所有站点，对每一项所有字符串值统一替换 ./
+                    for site in sites_list:
+                        if isinstance(site, dict):
+                            for k, v in site.items():
+                                if isinstance(v, str):
+                                    site[k] = replace_dot_slash(v)
+            print(f"[+] Sites 注入完成：更新了 {updated_count} 个站点，跳过了 {skipped_count} 个已有 jar 的站点")
+
+        # C. 统一写出为最终文件名 cpu.json
+        with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+            json.dump(config_data, f, indent=2, ensure_ascii=False)
+        print(f"[+] 最终配置文件已成功生成: {OUTPUT_JSON}")
+
+    - name: 4. 强行提交最新的 cpu.json 和 cpu.jar 到仓库
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        
+        # 强行添加，确保绕过任何 .gitignore 规则
+        if [ -f "cpu.json" ]; then git add -f cpu.json; fi
+        if [ -f "cpu.jar" ]; then git add -f cpu.jar; fi
+        
+        # 只要代码、配置或 jar 包有任何风吹草动，Git 都会自动捕捉并更新
+        if ! git diff --cached --quiet; then
+          git commit -m "自动同步最新cpu.json与cpu.jar: $(date +'%Y-%m-%d %H:%M:%S')"
+          git push origin HEAD
+          echo "【成功】cpu.json 和 cpu.jar 已成功推送到你的远程仓库！"
+        else
+          echo "【提示】内容与上一版本完全一致，无需重复提交。"
+        fi
