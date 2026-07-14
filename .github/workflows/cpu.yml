@@ -34,7 +34,9 @@ jobs:
           #cat tool/debug_raw.txt
           
           #cat cpu_config.json
-        
+          python build_local.py cpu_config.json output
+          \cp -pdr output/* ../
+          cd ../
  
         
     - name: 2. 执行 Spider 实时检测与下载
