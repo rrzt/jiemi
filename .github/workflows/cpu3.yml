@@ -33,17 +33,17 @@ jobs:
           python tvbox.py https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json cpu_config.json dec 
           #cat tool/debug_raw.txt
           #cat cpu_config.json
-          python build_local.py xs.json output
-          \cp -pdr output/* ../xiaosa/
-          python xiao.py ../xiaosa/api.json dianshi.json
-          python xiao.py ../xiaosa/api.json jsm.json
-          python copy_xbpq.py dianshi_with_app_sites.json
-          \cp -pdr dianshi_with_app_sites.json ../dianshi.json
-          \cp -pdr jsm_with_app_sites.json ../jsm.json
-          \cp -pdr ../xiaosa/spider.jar ../jar/spider.jar
-          rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
-          cd ../
-        shell: bash
+          #python build_local.py xs.json output
+          #\cp -pdr output/* ../xiaosa/
+          #python xiao.py ../xiaosa/api.json dianshi.json
+          #python xiao.py ../xiaosa/api.json jsm.json
+          #python copy_xbpq.py dianshi_with_app_sites.json
+          #\cp -pdr dianshi_with_app_sites.json ../dianshi.json
+          #\cp -pdr jsm_with_app_sites.json ../jsm.json
+          #\cp -pdr ../xiaosa/spider.jar ../jar/spider.jar
+          #rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
+          #cd ../
+          #shell: bash
  
         
     - name: 2. 执行 Spider 实时检测与下载
