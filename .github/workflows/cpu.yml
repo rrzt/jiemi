@@ -33,6 +33,7 @@ jobs:
           python tvbox.py https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json cpu_config.json dec 
           
           cd ..
+          cat cpu_config.json
         
         if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
         
