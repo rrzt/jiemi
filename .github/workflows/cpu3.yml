@@ -176,5 +176,10 @@ jobs:
         cd $GITHUB_WORKSPACE
         if [ -f "tool/cpu.json" ]; then mv -vf tool/cpu.json ./; fi
         if [ -f "tool/cpu.jar" ]; then mv -vf tool/cpu.jar ./; fi
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        
+        if [ -f "cpu.json" ]; then git add -f cpu.json; fi
+        if [ -f "cpu.jar" ]; then git add -f cpu.jar; fi
 
 
