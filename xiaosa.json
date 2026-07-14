@@ -259,28 +259,6 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
-      "key": "久久",
-      "name": "久久 • APP",
-      "type": 3,
-      "api": "csp_AppYsV2",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "http://99cms.jj99.icu:8199/api.php/app/",
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
-    },
-    {
-      "key": "闪影",
-      "name": "闪影 • APP",
-      "type": 3,
-      "api": "csp_AppYsV2",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "http://38.47.213.61:41271/mogai_api.php/v1.vod",
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
-    },
-    {
       "key": "飞飞",
       "name": "飞飞 • APP",
       "type": 3,
@@ -779,13 +757,6 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
-      "key": "云播影视",
-      "name": "云播 • 影视",
-      "type": 3,
-      "api": "csp_Tvyb",
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
-    },
-    {
       "key": "骚火影视",
       "name": "骚火 • 影视",
       "type": 3,
@@ -812,11 +783,34 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
+      "key": "枫叶影视",
+      "name": "枫叶 • 影视",
+      "type": 3,
+      "api": "csp_XBPQ",
+      "ext": {
+        "请求头": "手机",
+        "简介": "text cor3\">[*],&&</div>",
+        "图片": "data-src=\"&&\"[替换:amp;>>空]",
+        "主页url": "https://www.cd-zj.com/label/qq.html",
+        "副标题": "ft2\">&&</i>",
+        "线路数组": "<i class=\"fa ds-dianying\">&&</span>",
+        "播放数组": "anthology-list-play size\">&&</ul>",
+        "分类url": "https://www.cd-zj.com/cupfox-list/{cateId}-{area}--{class}-----{catePg}---{year}.html",
+        "分类": "电影$1#电视剧$2#综艺$3#动漫$4#短剧$5"
+      },
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
       "key": "小镇影视",
       "name": "小镇 • 影视",
       "type": 3,
       "api": "csp_XBPQ",
-      "ext": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/json/XZYS.json",
+      "ext": {
+        "线路数组": "<a data-toggle=\"tab\"&&/a>",
+        "线路标题": ">&&<",
+        "分类url": "http://dyxz.tv/list/{cateId}_{catePg}.html",
+        "分类": "电影$1#电视剧$2#动漫$3#综艺$4"
+      },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -824,7 +818,13 @@
       "name": "面包 • 影视",
       "type": 3,
       "api": "csp_XBPQ",
-      "ext": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/json/MBYS.json",
+      "ext": {
+        "请求头": "User-Agent$MOBILE_UA",
+        "编码": "UTF-8",
+        "分类url": "https://v.aiwule.com/vodshow/{cateId}-{area}-{by}-{class}-{lang}-{letter}---{catePg}---{year}.html",
+        "分类": "电影$20#电视剧$21#动漫$23#综艺$22#短剧$47",
+        "简介": "简介：&&"
+      },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -832,7 +832,13 @@
       "name": "永乐 • 影视",
       "type": 3,
       "api": "csp_XBPQ",
-      "ext": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/json/YLYS.json",
+      "ext": {
+        "请求头": "User-Agent$MOBILE_UA",
+        "编码": "UTF-8",
+        "分类": "电影$1#电视剧$2#综艺$3#动漫$4",
+        "类型": "动作片$6#喜剧片$7#爱情片$8#科幻片$9#奇幻片$10#恐怖片$11#剧情片$12#战争片$20#动画片$26#悬疑片$22#冒险片$23#犯罪片$24#惊悚片$45#歌舞片$46#灾难片$47#网络片$48||国产剧$13#港台剧$14#日剧$15#韩剧$33#欧美剧$16#泰剧$34#新马剧$35#其他剧$25||内地综艺$27#港台综艺$28#日本综艺$29#韩国综艺$36#欧美综艺$30#新马泰综艺$37#其他综艺$38||国产动漫$31#日本动漫$32#韩国动漫$39#港台动漫$40#新马泰动漫$41#欧美动漫$42#其他动漫$43",
+        "分类url": "https://www.ylys.tv/vodshow/{cateId}-{area}-{by}-{class}-{lang}-{letter}---{catePg}---{year}.html"
+      },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
