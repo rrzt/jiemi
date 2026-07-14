@@ -35,16 +35,7 @@ jobs:
           
           #cat cpu_config.json
         
-        if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
-        
-          
-             #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
-          cd ..
-
-        else
-          echo "【错误】解密出来的基础 JSON 结构不合法！"
-          exit 1
-        fi        
+ 
         
     - name: 2. 执行 Spider 实时检测与下载
       run: |
