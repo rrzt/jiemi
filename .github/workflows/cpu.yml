@@ -29,7 +29,9 @@ jobs:
           pwd
           cd tool/
           pip install demjson3 pycryptodome requests --break-system-packages        
-          python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
+          #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
+          python tvbox.py https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json cpu_config.json dec 
+          
           cd ..
         
         if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
