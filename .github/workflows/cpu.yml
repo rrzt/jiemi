@@ -26,7 +26,17 @@ jobs:
     - name: 1. 执行原有的解密脚本
       run: |
         python decrypt_cpu.py
+        if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
+        else
+          cd tool/
+             python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
+          cd ..
 
+        else
+          echo "【错误】解密出来的基础 JSON 结构不合法！"
+          exit 1
+        fi        
+        
     - name: 2. 执行 Spider 实时检测与下载
       run: |
         if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
