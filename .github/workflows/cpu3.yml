@@ -28,6 +28,7 @@ jobs:
  
     - name: 1. 执行原有的解密脚本
       run: |
+         cd tool/
          #python decrypt_cpu.py
          #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
           python tvbox.py https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json cpu_config.json dec 
@@ -48,6 +49,7 @@ jobs:
         
     - name: 2. 执行 Spider 实时检测与下载
       run: |
+        cd tool/
         if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
           # 动态提取原作者最新的 jar 链接
           JAR_URL1=$(grep -oP '"spider"\s*:\s*"\K[^"]+' cpu_config.json | cut -d';' -f1)
@@ -81,6 +83,7 @@ jobs:
     - name: 3. 运行内置 Python 逻辑：注入 sites 并生成最终的 cpu.json
       shell: python
       run: |
+        cd tool/
         import json
         import os
 
@@ -149,6 +152,7 @@ jobs:
 
     - name: 4. 强行提交最新的 cpu.json 和 cpu.jar 到仓库
       run: |
+        cd tool/
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         
