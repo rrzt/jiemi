@@ -83,10 +83,9 @@ jobs:
     - name: 3. 运行内置 Python 逻辑：注入 sites 并生成最终的 cpu.json
       shell: python
       run: |
-        cd tool/
+        
         import json
         import os
-
         INPUT_JSON = "cpu_config.json"
         OUTPUT_JSON = "cpu.json"
         
@@ -96,7 +95,7 @@ jobs:
         GITHUB_REPO = "jiemi"
         
         BASE_JAR_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/main/cpu.jar"
-
+  
         if not os.path.exists(INPUT_JSON):
             print(f"[-] 未找到源文件 {INPUT_JSON}")
             exit(1)
