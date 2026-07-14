@@ -19,7 +19,7 @@ jobs:
         curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
           -H "Content-Type: application/x-www-form-urlencoded" \
           -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-          -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
+          -d "url=http://itv666.cc/aowu/config.webp" \
           -o cpu_config.json
         
        #  -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
