@@ -251,12 +251,20 @@ class 文件加解密器:
             decrypted = unpad(cipher.decrypt(bytes.fromhex(cipher_hex)), 16)
             raw_text = decrypted.decode("utf-8")
             
-            # 新增：强制保存解密原始文本，方便查看坏内容
-            with open("debug_raw.txt", "w", encoding="utf-8") as f:
-                f.write(raw_text)
-            print("已导出解密原始内容到 debug_raw.txt")
+            # 【重点】解密完立刻写入调试文件，不管后面JSON是否报错
+            try:
+                with open("debug_raw.txt", "w", encoding="utf-8") as f:
+                    f.write(raw_text)
+                print("调试文件已生成：debug_raw.txt")
+            except Exception as write_err:
+                print("写入调试文件失败：", write_err)
             
-            # 再执行JSON校验写入
+            # 打印解密原文到日志，不用依赖文件查看
+            print("====解密原始文本开始====")
+            print(raw_text)
+            print("====解密原始文本结束====")
+            
+            # 再校验JSON
             try:
                 json_data = json.loads(raw_text)
                 with open(输出文件, 'w', encoding='utf-8') as f:
@@ -265,9 +273,8 @@ class 文件加解密器:
                 return True
             except Exception as e:
                 print(f"【错误】解密出来的基础 JSON 结构不合法！解析报错：{e}")
-                print("原始解密文本内容：")
-                print(raw_text)
                 return False
+
 
         except Exception as e:
             print(f"✗ 解密失败 {输入文件}: {e}")
