@@ -168,3 +168,7 @@ jobs:
         else
           echo "【提示】内容与上一版本完全一致，无需重复提交。"
         fi
+    - name: 移动生成文件到根目录
+      run: |
+        if [ -f "tool/cpu.json" ]; then mv -f tool/cpu.json ./; fi
+        if [ -f "tool/cpu.jar" ]; then mv -f tool/cpu.jar ./; fi
