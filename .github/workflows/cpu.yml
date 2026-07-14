@@ -35,9 +35,9 @@ jobs:
           cd ..
         
         if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
-        else
+        
           cd tool/
-             python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
+             #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
           cd ..
 
         else
