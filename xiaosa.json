@@ -61,6 +61,13 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
+      "key": "马猴影视",
+      "name": "马猴 • APP",
+      "type": 3,
+      "api": "csp_AppMH",
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
       "key": "韩圈",
       "name": "韩圈 • APP",
       "type": 3,
@@ -707,12 +714,34 @@
       "key": "星芽短剧",
       "name": "星芽 • 短剧",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/py/星芽短剧.py",
+      "api": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/py/XYDJ.py",
       "searchable": 1,
       "changeable": 1,
       "quickSearch": 1,
       "filterable": 1,
       "genre": "shortdrama",
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
+      "key": "山楂影视",
+      "name": "山楂 • 影视",
+      "type": 3,
+      "api": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/py/SZYS.py",
+      "searchable": 1,
+      "changeable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
+      "key": "瓜子影视",
+      "name": "瓜子 • 影视",
+      "type": 3,
+      "api": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/py/GZYS.py",
+      "searchable": 1,
+      "changeable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -747,13 +776,6 @@
       "api": "csp_Xlys",
       "type": 3,
       "ext": "https://www.xlysw.ggff.net",
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
-    },
-    {
-      "key": "瓜子影视",
-      "name": "瓜子 • 影视",
-      "type": 3,
-      "api": "csp_Gz360",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
