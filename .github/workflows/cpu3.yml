@@ -1,4 +1,4 @@
-name: 生成cpu.json本地解密 密文和网页 生成新Jar配置
+name: 生成cpu.json解密全 密文和网页和接口 生成新Jar配置
 
 on:
   schedule:
@@ -26,15 +26,15 @@ jobs:
         #pip install requests
         pip install requests demjson3 pycryptodome
  
-    - name: 1. 执行原有的解密脚本
+    - name: 1. 执行原有的解密脚本，按需修改需解网址
       run: |
          cd tool/
          #python decrypt_cpu.py
           #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
-          python tvbox.py http://itv666.cc/aowu/config.webp cpu_config.json dec
           #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
-  
-    - name: 1.1 执行 第二类解密函数
+          python tvbox.py http://itv666.cc/aowu/config.webp cpu_config.json dec
+          
+    - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
       run: |
           cd tool/
           #if ! [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
@@ -55,8 +55,16 @@ jobs:
           #rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
           #cd ../
           #shell: bash
- 
-        
+    - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址
+      run: |
+        cd tool/
+        if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
+        curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
+          -H "Content-Type: application/x-www-form-urlencoded" \
+          -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+          -d "url=https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json" \
+          -o cpu_config.json 
+        fi
     - name: 2. 执行 Spider 实时检测与下载
       run: |
         cd tool/
