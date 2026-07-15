@@ -109,7 +109,11 @@ jobs:
       working-directory: tool/
       shell: python
       run: |
+        # 安装依赖
+        pip install dirtyjson
         
+        # 使用 heredoc 嵌入 Python 代码
+        python <<'EOF'      
         import json
         import os
         INPUT_JSON = "cpu_config.json"
