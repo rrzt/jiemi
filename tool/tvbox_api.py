@@ -17,11 +17,7 @@ DECRYPT_URLS = [
 
 
 def decrypt_url(encrypted_url: str) -> bytes | None:
-    """
-    尝试通过所有解密 API 获取解密后的原始字节内容。
-    返回 bytes 以便保留任何编码，写入时再按需解码。
-    """
-    # 对 URL 进行编码，保留结构字符
+    """尝试通过所有解密 API 获取解密后的原始字节内容"""
     encoded_url = urllib.parse.quote(encrypted_url, safe=':/?=&')
     for base in DECRYPT_URLS:
         full_url = base + encoded_url
@@ -29,7 +25,7 @@ def decrypt_url(encrypted_url: str) -> bytes | None:
             with urllib.request.urlopen(full_url, timeout=30) as resp:
                 if resp.status == 200:
                     content_bytes = resp.read()
-                    if content_bytes:  # 非空即认为成功
+                    if content_bytes:
                         return content_bytes
                     else:
                         print(f"⚠️ API {base} 返回空内容，跳过", file=sys.stderr)
@@ -58,13 +54,22 @@ def main():
         print("❌ 所有解密 API 均失败，无法获取解密内容", file=sys.stderr)
         sys.exit(1)
 
-    # 以二进制方式写入，避免编码问题；也可选择解码为字符串再写入，
-    # 但二进制更安全，确保原样保留。
+    # 写入文件
     with open(output_file, "wb") as f:
         f.write(content_bytes)
 
-    # 打印文件大小供调试
-    print(f"✅ 解密成功，已写入 {len(content_bytes)} 字节到 {output_file}")
+    file_size = len(content_bytes)
+    print(f"✅ 已写入 {file_size} 字节到 {output_file}")
+
+    # 预览内容（前200个字符），帮助调试
+    preview = content_bytes[:200].decode('utf-8', errors='replace')
+    print(f"📄 文件开头预览（UTF-8）:\n{preview}")
+
+    # 如果文件为空（理论上不会，因为 content_bytes 非空），但以防万一
+    if file_size == 0:
+        print("❌ 写入的文件大小为 0，内容为空", file=sys.stderr)
+        sys.exit(1)
+
     sys.exit(0)
 
 
