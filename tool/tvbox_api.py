@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-解密脚本：通过线上解密 API 解密给定的加密网址，将结果保存到指定的输出文件。
+解密脚本：通过线上解密 API 获取解密后的内容，并原样写入指定文件。
 用法: python jm.py <需解密的网址> <输出文件路径>
 示例: python jm.py "https://example.com/encrypted.txt" config.json
 """
@@ -12,25 +12,30 @@ import urllib.parse
 # 解密 API 列表（按顺序尝试）
 DECRYPT_URLS = [
     "https://feiyangdigital.v1.mk/api/jiemi.php?url=",
-    "https://www.xn--sss604efuw.net/jm/jiemi.php?url=",  # 更新为可用的域名
+    "https://www.xn--sss604efuw.net/jm/jiemi.php?url=",
 ]
 
 
-def decrypt_url(encrypted_url: str) -> str | None:
-    """尝试通过所有解密 API 获取解密后的内容"""
-    # 关键修正：对URL进行编码，但保留结构字符（如 :// 和 /）
-    # quote 函数的 safe 参数指定了哪些字符不应被编码
+def decrypt_url(encrypted_url: str) -> bytes | None:
+    """
+    尝试通过所有解密 API 获取解密后的原始字节内容。
+    返回 bytes 以便保留任何编码，写入时再按需解码。
+    """
+    # 对 URL 进行编码，保留结构字符
     encoded_url = urllib.parse.quote(encrypted_url, safe=':/?=&')
     for base in DECRYPT_URLS:
         full_url = base + encoded_url
         try:
             with urllib.request.urlopen(full_url, timeout=30) as resp:
                 if resp.status == 200:
-                    content = resp.read().decode('utf-8')
-                    if content.strip():
-                        return content
+                    content_bytes = resp.read()
+                    if content_bytes:  # 非空即认为成功
+                        return content_bytes
+                    else:
+                        print(f"⚠️ API {base} 返回空内容，跳过", file=sys.stderr)
+                else:
+                    print(f"⚠️ API {base} 返回状态码 {resp.status}，跳过", file=sys.stderr)
         except Exception as e:
-            # 打印具体错误信息以便调试
             print(f"⚠️ 尝试 API {base} 失败: {e}", file=sys.stderr)
             continue
     return None
@@ -47,16 +52,19 @@ def main():
 
     print(f"⏳ 正在解密: {encrypted_url}")
 
-    decrypted_content = decrypt_url(encrypted_url)
+    content_bytes = decrypt_url(encrypted_url)
 
-    if decrypted_content is None:
+    if content_bytes is None:
         print("❌ 所有解密 API 均失败，无法获取解密内容", file=sys.stderr)
         sys.exit(1)
 
-    with open(output_file, "w", encoding="utf-8") as f:
-        f.write(decrypted_content)
+    # 以二进制方式写入，避免编码问题；也可选择解码为字符串再写入，
+    # 但二进制更安全，确保原样保留。
+    with open(output_file, "wb") as f:
+        f.write(content_bytes)
 
-    print(f"✅ 解密成功，内容已保存至 {output_file}")
+    # 打印文件大小供调试
+    print(f"✅ 解密成功，已写入 {len(content_bytes)} 字节到 {output_file}")
     sys.exit(0)
 
 
