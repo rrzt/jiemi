@@ -1,5 +1,5 @@
 {
-  "spider": "https://zl.wpscdn.cn/2026/07/11/space_img/64dea739-dfa3-4797-b25a-68c47f222e0a.png;md5;dd6fbafde59756e7f5043a20c74b1961",
+  "spider": "https://nos.netease.com/ysf/4e96ca1a41efeb4b3fa96a507f12b74b.png;md5;625131d4caa2f21c12a5dae01da59fd1",
   "logo": "https://file.icve.com.cn/file_doc/945/35/EC508FBD046D33EC4832BB76B63B6C94.gif",
   "danmaku": "http://127.0.0.1:2525/danmu?name={name}&epid={episode}",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=AowuWapper&mode=2",
@@ -17,7 +17,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "更新日期:20260711",
+      "name": "更新日期:20260715",
       "key": "Y360",
       "type": 3,
       "api": "csp_Y360Amns",
@@ -406,10 +406,10 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "🐱稀饭|动漫",
-      "key": "DMxifan",
+      "name": "🐱花海|动漫",
+      "key": "DMhhz",
       "type": 3,
-      "api": "csp_DMxifanAmns",
+      "api": "csp_DMhhzAmns",
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
