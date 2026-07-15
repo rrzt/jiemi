@@ -35,44 +35,44 @@ jobs:
           #按需修改需解网址
           python tvbox_pic.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json
           
-    - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
-      run: |
-          cd tool/
-          #if ! [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
+    # - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
+    #   run: |
+    #       cd tool/
+    #       #if ! [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
           
-          if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
-          python decrypt_cpu.py
-          fi
+    #       if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
+    #       python decrypt_cpu.py
+    #       fi
          
-          #cat tool/debug_raw.txt
-          #cat cpu_config.json
-          #python build_local.py xs.json output
-          #\cp -pdr output/* ../xiaosa/
-          #python xiao.py ../xiaosa/api.json dianshi.json
-          #python xiao.py ../xiaosa/api.json jsm.json
-          #python copy_xbpq.py dianshi_with_app_sites.json
-          #\cp -pdr dianshi_with_app_sites.json ../dianshi.json
-          #\cp -pdr jsm_with_app_sites.json ../jsm.json
-          #\cp -pdr ../xiaosa/spider.jar ../jar/spider.jar
-          #rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
-          #cd ../
-          #shell: bash
-    - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址 -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
-      run: |
-        cd tool/
-        if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
-        curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
-          -H "Content-Type: application/x-www-form-urlencoded" \
-          -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-          -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
-          -o cpu_config.json 
-        fi
-    - name: 1.3 执行 第四类饭太硬调用网站接口解密，按需修改源地址
-      run: |
-        cd tool/
-        if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
-          python tvbox_api.py "https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" cpu_config.json
-        fi        
+    #       #cat tool/debug_raw.txt
+    #       #cat cpu_config.json
+    #       #python build_local.py xs.json output
+    #       #\cp -pdr output/* ../xiaosa/
+    #       #python xiao.py ../xiaosa/api.json dianshi.json
+    #       #python xiao.py ../xiaosa/api.json jsm.json
+    #       #python copy_xbpq.py dianshi_with_app_sites.json
+    #       #\cp -pdr dianshi_with_app_sites.json ../dianshi.json
+    #       #\cp -pdr jsm_with_app_sites.json ../jsm.json
+    #       #\cp -pdr ../xiaosa/spider.jar ../jar/spider.jar
+    #       #rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
+    #       #cd ../
+    #       #shell: bash
+    # - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址 -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
+    #   run: |
+    #     cd tool/
+    #     if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
+    #     curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
+    #       -H "Content-Type: application/x-www-form-urlencoded" \
+    #       -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+    #       -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
+    #       -o cpu_config.json 
+    #     fi
+    # - name: 1.3 执行 第四类饭太硬调用网站接口解密，按需修改源地址
+    #   run: |
+    #     cd tool/
+    #     if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
+    #       python tvbox_api.py "https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" cpu_config.json
+    #     fi        
     - name: 2. 执行 Spider 实时检测与下载
       run: |
         cd tool/
