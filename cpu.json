@@ -1,5 +1,5 @@
 {
-  "spider": "https://1gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar",
+  "spider": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/cpu.jar",
   "logo": "https://file.icve.com.cn/file_doc/945/35/EC508FBD046D33EC4832BB76B63B6C94.gif",
   "danmaku": "http://127.0.0.1:2525/danmu?name={name}&epid={episode}",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=AowuWapper&mode=2",
