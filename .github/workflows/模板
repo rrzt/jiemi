@@ -33,7 +33,7 @@ jobs:
           #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
           #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
           #按需修改需解网址
-          python tvbox.py https://raw.githubusercontent.com/rrzt/jiemi/main/cpuiy_config.json cpu_config.json dec
+          python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec
           
     - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
       run: |
@@ -57,16 +57,22 @@ jobs:
           #rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
           #cd ../
           #shell: bash
-    - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址
+    - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址 -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
       run: |
         cd tool/
         if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
         curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
           -H "Content-Type: application/x-www-form-urlencoded" \
           -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-          -d "url=https://raw.githubusercontent.com/rrzt/jiemi/main/cpuiy_config.json" \
+          -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
           -o cpu_config.json 
         fi
+    - name: 1.3 执行 第四类饭太硬调用网站接口解密，按需修改源地址
+      run: |
+        cd tool/
+        if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
+          python tvbox_api.py "https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" cpu_config.json
+        fi        
     - name: 2. 执行 Spider 实时检测与下载
       run: |
         cd tool/
@@ -98,13 +104,16 @@ jobs:
           echo "【错误】解密出来的基础 JSON 结构不合法！"
           exit 1
         fi
-
-
+ 
     - name: 3. 运行内置 Python 逻辑：注入 sites 并生成最终的 cpu.json
       working-directory: tool/
-      shell: python
+      shell: bash
       run: |
+        # 安装依赖
+        pip install dirtyjson
         
+        # 使用 heredoc 嵌入 Python 代码
+        python <<'EOF'      
         import json
         import os
         INPUT_JSON = "cpu_config.json"
@@ -121,8 +130,14 @@ jobs:
             print(f"[-] 未找到源文件 {INPUT_JSON}")
             exit(1)
 
+        # with open(INPUT_JSON, "r", encoding="utf-8") as f:
+        #     config_data = json.load(f)
+
+        import dirtyjson  # 确保已导入
+
         with open(INPUT_JSON, "r", encoding="utf-8") as f:
-            config_data = json.load(f)
+            config_data = dirtyjson.load(f)
+        
 
         # A. 顺便把最顶层的顶级 spider 链接也改成你自己的 cpu.jar
         config_data["spider"] = BASE_JAR_URL
