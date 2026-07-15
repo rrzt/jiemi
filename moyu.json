@@ -49,6 +49,7 @@
       "style": {
         "type": "list"
       },
+      "ext": "https://6800.kstore.vip/share.json",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/moyu.jar"
     },
     {
