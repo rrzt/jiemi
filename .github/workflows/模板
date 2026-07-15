@@ -95,7 +95,8 @@ jobs:
           
           if [ -n "$JAR_URL" ] && [[ "$JAR_URL" == http* ]]; then
             echo "成功抓取到远程 JAR 地址: $JAR_URL"
-            curl -L "$JAR_URL" -o cpu.jar
+            #curl -L "$JAR_URL" -o cpu.jar
+            curl -L --connect-timeout 15 --max-time 120 --retry 3 --retry-delay 2 "$JAR_URL" -o cpu.jar
             echo "已成功将最新的 jar 下载并重命名为 cpu.jar"
           else
             echo "提示：未在配置中找到远程 JAR 链接。"
