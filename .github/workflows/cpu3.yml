@@ -36,8 +36,8 @@ jobs:
   
     - name: 1.1 执行 第二类解密函数
       run: |          
-          if ! [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
-          
+          #if ! [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
+          if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
           python decrypt_cpu.py
           fi
          
