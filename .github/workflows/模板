@@ -1,4 +1,4 @@
-name: 生成cpu.json解密全 密文和网页和接口 生成新Jar配置 修改（批量cpu.json、  cpu.jar，逐条 “修改” ）
+name: 测试cpu.json解密全图片 生成新Jar配置 修改（批量cpu.json、  cpu.jar，逐条 “修改” ）
 
 on:
   schedule:
@@ -26,15 +26,25 @@ jobs:
         #pip install requests
         pip install requests demjson3 pycryptodome
  
-    - name: 1. 执行原有的解密脚本，
+    - name: 1. 执行全景的解密脚本，，
       run: |
          cd tool/
          #python decrypt_cpu.py
           #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
           #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
           #按需修改需解网址
+          python tvbox_pic.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json
+    
+    - name: 1.1.1 执行原有的解密脚本，
+      run: |
+         cd tool/
+         #python decrypt_cpu.py
+          #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
+          #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
+          #按需修改需解网址
+          if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
           python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec
-          
+          fi
     - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
       run: |
           cd tool/
