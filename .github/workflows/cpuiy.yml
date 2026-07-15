@@ -118,6 +118,15 @@ jobs:
         # 强行添加，确保绕过任何 .gitignore 规则
         if [ -f "cpu_config.json" ]; then git add -f cpu_config.json; fi
         if [ -f "cpu.jar" ]; then git add -f cpu.jar; fi
+        # 只要代码、配置或 jar 包有任何风吹草动，Git 都会自动捕捉并更新
+        if ! git diff --cached --quiet; then
+          git commit -m "自动同步最新cpu.json与cpu.jar: $(date +'%Y-%m-%d %H:%M:%S')"
+          git push origin HEAD
+          echo "【成功】cpu.json 和 cpu.jar 已成功推送到你的远程仓库！"
+        else
+          echo "【提示】内容与上一版本完全一致，无需重复提交。"
+        fi
+
         #以上临时测试用
     # - name: 3. 运行内置 Python 逻辑：注入 sites 并生成最终的 cpu.json
     #   working-directory: tool/
