@@ -34,28 +34,28 @@ jobs:
           #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
           python tvbox.py https://raw.githubusercontent.com/chitue/dongliTV/main/api.json cpu_config.json dec
           
-    - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
-      run: |
-          cd tool/
-          #if ! [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
+    # - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
+    #   run: |
+    #       cd tool/
+    #       #if ! [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
           
-          if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
-          #python decrypt_cpu.py
-          fi
+    #       if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
+    #       python decrypt_cpu.py
+    #       fi
          
-          #cat tool/debug_raw.txt
-          #cat cpu_config.json
-          #python build_local.py xs.json output
-          #\cp -pdr output/* ../xiaosa/
-          #python xiao.py ../xiaosa/api.json dianshi.json
-          #python xiao.py ../xiaosa/api.json jsm.json
-          #python copy_xbpq.py dianshi_with_app_sites.json
-          #\cp -pdr dianshi_with_app_sites.json ../dianshi.json
-          #\cp -pdr jsm_with_app_sites.json ../jsm.json
-          #\cp -pdr ../xiaosa/spider.jar ../jar/spider.jar
-          #rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
-          #cd ../
-          #shell: bash
+    #       #cat tool/debug_raw.txt
+    #       #cat cpu_config.json
+    #       #python build_local.py xs.json output
+    #       #\cp -pdr output/* ../xiaosa/
+    #       #python xiao.py ../xiaosa/api.json dianshi.json
+    #       #python xiao.py ../xiaosa/api.json jsm.json
+    #       #python copy_xbpq.py dianshi_with_app_sites.json
+    #       #\cp -pdr dianshi_with_app_sites.json ../dianshi.json
+    #       #\cp -pdr jsm_with_app_sites.json ../jsm.json
+    #       #\cp -pdr ../xiaosa/spider.jar ../jar/spider.jar
+    #       #rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
+    #       #cd ../
+    #       #shell: bash
     # - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址
     #   run: |
     #     cd tool/
