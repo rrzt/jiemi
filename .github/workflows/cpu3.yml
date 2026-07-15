@@ -30,8 +30,10 @@ jobs:
       run: |
          cd tool/
          #python decrypt_cpu.py
-          python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
+          #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
           #python tvbox.py https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json cpu_config.json dec 
+          python tvbox.py http://itv666.cc/aowu/config.webp dec 
+          #http://itv666.cc/aowu/config.webp
           #cat tool/debug_raw.txt
           #cat cpu_config.json
           #python build_local.py xs.json output
