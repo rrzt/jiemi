@@ -33,13 +33,13 @@ jobs:
           python tvbox_api.py "https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" cpu_config.json
         fi        
     
-    - name: 1. 执行原有的解密脚本，按需修改需解网址
-      run: |
-         cd tool/
-         #python decrypt_cpu.py
-          #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
-          #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
-          python tvbox.py https://raw.githubusercontent.com/rrzt/jiemi/main/cpuiy_config.json cpu_config.json dec
+    # - name: 1. 执行原有的解密脚本，按需修改需解网址
+    #   run: |
+    #      cd tool/
+    #      #python decrypt_cpu.py
+    #       #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
+    #       #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
+    #       python tvbox.py https://raw.githubusercontent.com/rrzt/jiemi/main/cpuiy_config.json cpu_config.json dec
           
     - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
       run: |
