@@ -9,6 +9,23 @@ on:
 jobs:
   decrypt_and_process:
     runs-on: ubuntu-latest
+    #按需修改变量
+    env:
+     #原始源网址
+      URL: "https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png"
+      #个人仓库 本地JAR地址  代理/用户名/仓库名/输出文件名  PROXY/GIT_USER/GIT_CK/输出文件名/JAR_FILE
+      PROXY: "https://gh-proxy.org/https://raw.githubusercontent.com"
+      GIT_USER: "rrzt"
+      GIT_CK: "jiemi"
+      JAR_FILE:  "cpu.jar"
+      JSON_FILE: "cpu.json"
+      CONFIG_FILE: "tmp_config.json"
+
+    # 固定基础域名，针对  ./a.jar文件  本地化包赋 下载路径 供后续下载
+      BASE_DOMAIN: "https://raw.githubusercontent.com/IY-CPU/IY/main/"
+    #固定基础域名，针对./a.js ./a.json 
+      BASE_URL: "https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
+
 
     steps:
     - name: 检出仓库代码
@@ -30,32 +47,32 @@ jobs:
       run: |
          cd tool/
          #python decrypt_cpu.py
-          #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
+          #python tvbox.py "$URL" "$CONFIG_FILE" dec        
           #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
           #按需修改需解网址
-          python tvbox_pic.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json
+          python tvbox_pic.py "$URL" "$CONFIG_FILE"
     
     - name: 1.1.1 执行原有的解密脚本，
       run: |
          cd tool/
          #python decrypt_cpu.py
-          #python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec        
+          #python tvbox.py "$URL" "$CONFIG_FILE" dec        
           #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
           #按需修改需解网址
-          if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
-          python tvbox.py https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png cpu_config.json dec
+          if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
+          python tvbox.py "$URL" "$CONFIG_FILE" dec
           fi
     - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
       run: |
           cd tool/
-          #if ! [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
+          #if ! [ -f "$CONFIG_FILE" ] && grep -q -E "spider|sites" "$CONFIG_FILE"; then
           
-          if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
+          if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
           python decrypt_cpu.py
           fi
          
           #cat tool/debug_raw.txt
-          #cat cpu_config.json
+          #cat "$CONFIG_FILE"
           #python build_local.py xs.json output
           #\cp -pdr output/* ../xiaosa/
           #python xiao.py ../xiaosa/api.json dianshi.json
@@ -70,28 +87,28 @@ jobs:
     - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址 -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
       run: |
         cd tool/
-        if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
+        if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
         curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
           -H "Content-Type: application/x-www-form-urlencoded" \
           -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-          -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
-          -o cpu_config.json 
+          -d "url="$URL"" \
+          -o "$CONFIG_FILE" 
         fi
     - name: 1.3 执行 第四类饭太硬调用网站接口解密，按需修改源地址
       run: |
         cd tool/
-        if [ ! -f "cpu_config.json" ] || ! grep -q -E "spider|sites" cpu_config.json; then
-          python tvbox_api.py "https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" cpu_config.json
+        if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
+          python tvbox_api.py "$URL" "$CONFIG_FILE"
         fi        
     - name: 2. 执行 Spider 实时检测与下载
       run: |
         cd tool/
-        if [ -f "cpu_config.json" ] && grep -q -E "spider|sites" cpu_config.json; then
+        if [ -f "$CONFIG_FILE" ] && grep -q -E "spider|sites" "$CONFIG_FILE"; then
           # 动态提取原作者最新的 jar 链接
-          JAR_URL1=$(grep -oP '"spider"\s*:\s*"\K[^"]+' cpu_config.json | cut -d';' -f1)
+          JAR_URL1=$(grep -oP '"spider"\s*:\s*"\K[^"]+' "$CONFIG_FILE" | cut -d';' -f1)
           
           # 固定基础域名，针对  ./  本地化赋路径，按需修改
-          BASE_DOMAIN="https://raw.githubusercontent.com/IY-CPU/IY/main/"
+          #BASE_DOMAIN="https://raw.githubusercontent.com/IY-CPU/IY/main/"
           # 分三种情况给 JAR_URL 赋值
           if [[ "$JAR_URL1" == http* ]]; then
             # 情况2：完整http链接 /  和 情况3：带;截断后的完整链接
@@ -105,9 +122,9 @@ jobs:
           
           if [ -n "$JAR_URL" ] && [[ "$JAR_URL" == http* ]]; then
             echo "成功抓取到远程 JAR 地址: $JAR_URL"
-            #curl -L "$JAR_URL" -o cpu.jar
-            curl -L --connect-timeout 15 --max-time 120 --retry 3 --retry-delay 2 "$JAR_URL" -o cpu.jar
-            echo "已成功将最新的 jar 下载并重命名为 cpu.jar"
+            #curl -L "$JAR_URL" -o "$JAR_FILE"
+            curl -L --connect-timeout 15 --max-time 120 --retry 3 --retry-delay 2 "$JAR_URL" -o "$JAR_FILE"
+            echo "已成功将最新的 jar 下载并重命名为 $JAR_FILE"
           else
             echo "提示：未在配置中找到远程 JAR 链接。"
           fi
@@ -116,7 +133,7 @@ jobs:
           exit 1
         fi
  
-    - name: 3. 运行内置 Python 逻辑：注入 sites 并生成最终的 cpu.json
+    - name: 3. 运行内置 Python 逻辑：注入 sites 并生成最终的 "$JSON_FILE"
       working-directory: tool/
       shell: bash
       run: |
@@ -127,15 +144,21 @@ jobs:
         python <<'EOF'      
         import json
         import os
-        INPUT_JSON = "cpu_config.json"
-        OUTPUT_JSON = "cpu.json"
+        INPUT_JSON =  os.environ.get("CONFIG_FILE")
+        OUTPUT_JSON = os.environ.get("JSON_FILE")
         
-        # 你的 GitHub 仓库对应的 cpu.jar 纯净链接（不带 MD5）
+        # 你的 GitHub 仓库对应的 输出 cpu.jar 纯净链接（不带 MD5）
         # 【请注意】：请把下面两行的“你的GitHub用户名”和“你的仓库名”修改为你实际的名称
-        GITHUB_USER = "rrzt"
-        GITHUB_REPO = "jiemi"
-        
-        BASE_JAR_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/main/cpu.jar"
+        GITHUB_USER = os.environ.get("GIT_USER")
+        GITHUB_REPO = os.environ.get("GIT_CK")
+        jar_filename = os.environ.get("JAR_FILE")   # 获取环境变量值
+        BASE_PROXY = os.environ.get("PROXY")
+        # 检查是否有空值
+        if not GITHUB_USER or not GITHUB_REPO or not jar_filename or not BASE_PROXY:
+            print("[-] 请设置完整的环境变量：GIT_USER, GIT_CK, JAR_FILE, PROXY")
+            exit(1)        
+        #本地仓库下载完成纯净JAR文件路径    
+        BASE_JAR_URL = f"{BASE_PROXY}/{GITHUB_USER}/{GITHUB_REPO}/main/{jar_filename}"
   
         if not os.path.exists(INPUT_JSON):
             print(f"[-] 未找到源文件 {INPUT_JSON}")
@@ -150,7 +173,7 @@ jobs:
             config_data = dirtyjson.load(f)
         
 
-        # A. 顺便把最顶层的顶级 spider 链接也改成你自己的 cpu.jar
+        # A. 顺便把最顶层的顶级 spider 链接也改成你自己的 $JAR_FILE
         config_data["spider"] = BASE_JAR_URL
         print("[+] 已更新顶级 spider 链接")
 
@@ -174,13 +197,14 @@ jobs:
                     site["jar"] = BASE_JAR_URL
                     updated_count += 1
                     # 所有站点jar字段处理完毕后，统一定义基础地址,按需修改拼接地址
-                    BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
+                    #BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
+                    my_base_url = os.environ.get("BASE_URL") 
     
                     # 通用替换函数：将以 ./ 开头的字符串替换为 BASE_URL 拼接路径
                     def replace_dot_slash(val: str) -> str:
                         s = val.strip()
                         if s.startswith("./"):
-                            return BASE_URL + s.lstrip("./")
+                            return my_base_url + s.lstrip("./")
                         return val
 
                     # 遍历所有站点，对每一项所有字符串值统一替换 ./
@@ -191,7 +215,7 @@ jobs:
                                     site[k] = replace_dot_slash(v)
             print(f"[+] Sites 注入完成：更新了 {updated_count} 个站点，跳过了 {skipped_count} 个已有 jar 的站点")
 
-        # C. 统一写出为最终文件名 cpu.json，按需修改输出文件名
+        # C. 统一写出为最终文件名 "$JSON_FILE"，按需修改输出文件名
         with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
             json.dump(config_data, f, indent=2, ensure_ascii=False)
         print(f"[+] 最终配置文件已成功生成: {OUTPUT_JSON}")
@@ -201,21 +225,21 @@ jobs:
       run: |
         cd tool/
         # 移动文件到根目录（如果存在）
-        if [ -f "cpu.json" ]; then mv -f cpu.json ../; fi
-        if [ -f "cpu.jar" ]; then mv -f cpu.jar ../; fi
+        if [ -f "$JSON_FILE" ]; then mv -f "$JSON_FILE" ../; fi
+        if [ -f "$JAR_FILE" ]; then mv -f "$JAR_FILE" ../; fi
         cd $GITHUB_WORKSPACE        # 确保在根目录
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         
         # 强行添加，确保绕过任何 .gitignore 规则
-        if [ -f "cpu.json" ]; then git add -f cpu.json; fi
-        if [ -f "cpu.jar" ]; then git add -f cpu.jar; fi
+        if [ -f "$JSON_FILE" ]; then git add -f "$JSON_FILE"; fi
+        if [ -f "$JAR_FILE" ]; then git add -f "$JAR_FILE"; fi
         
         # 只要代码、配置或 jar 包有任何风吹草动，Git 都会自动捕捉并更新
         if ! git diff --cached --quiet; then
-          git commit -m "自动同步最新cpu.json与cpu.jar: $(date +'%Y-%m-%d %H:%M:%S')"
+          git commit -m "自动同步最新$JSON_FILE与$JAR_FILE: $(date +'%Y-%m-%d %H:%M:%S')"
           git push origin HEAD
-          echo "【成功】cpu.json 和 cpu.jar 已成功推送到你的远程仓库！"
+          echo "【成功】$JSON_FILE 和 $JAR_FILE 已成功推送到你的远程仓库！"
         else
           echo "【提示】内容与上一版本完全一致，无需重复提交。"
         fi
@@ -226,22 +250,22 @@ jobs:
     #     cd $GITHUB_WORKSPACE
     
     #     # 2. 移动文件（如果存在）
-    #     if [ -f "tool/cpu.json" ]; then mv -vf tool/cpu.json ./; fi
-    #     if [ -f "tool/cpu.jar" ]; then mv -vf tool/cpu.jar ./; fi
+    #     if [ -f "tool/$JSON_FILE" ]; then mv -vf tool/$JSON_FILE ./; fi
+    #     if [ -f "tool/$JAR_FILE" ]; then mv -vf tool/$JAR_FILE ./; fi
     
     #     # 3. 配置 Git 用户信息
     #     git config --local user.email "github-actions[bot]@users.noreply.github.com"
     #     git config --local user.name "github-actions[bot]"
     
     #     # 4. 添加根目录下的新文件（强制添加，绕过 .gitignore）
-    #     if [ -f "cpu.json" ]; then git add -f cpu.json; fi
-    #     if [ -f "cpu.jar" ]; then git add -f cpu.jar; fi
+    #     if [ -f "$JSON_FILE" ]; then git add -f "$JSON_FILE"; fi
+    #     if [ -f $JAR_FILE ]; then git add -f $JAR_FILE; fi
     
     #     # 5. 如果有变更，则提交并推送
     #     if ! git diff --cached --quiet; then
-    #       git commit -m "移动 cpu.json 和 cpu.jar 到根目录: $(date +'%Y-%m-%d %H:%M:%S')"
+    #       git commit -m "移动 $JSON_FILE 和 $JAR_FILE 到根目录: $(date +'%Y-%m-%d %H:%M:%S')"
     #       git push origin HEAD
-    #       echo "【成功】根目录下的 cpu.json 和 cpu.jar 已推送到远程仓库！"
+    #       echo "【成功】根目录下的 $JSON_FILE 和 $JAR_FILE 已推送到远程仓库！"
     #     else
     #       echo "【提示】根目录文件无变化，跳过提交。"
     #     fi
