@@ -54,38 +54,38 @@ jobs:
     #       #按需修改需解网址
     #       python tvbox_pic.py "$URL" "$CONFIG_FILE"
     
-    - name: 1.1.1 执行原有的解密脚本，
-      run: |
-         cd tool/
-         #python decrypt_cpu.py
-          #python tvbox.py "$URL" "$CONFIG_FILE" dec        
-          #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
-          #按需修改需解网址
-          if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
-          python tvbox.py "$URL" "$CONFIG_FILE" dec
-          fi
-    - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
-      run: |
-          cd tool/
-          #if ! [ -f "$CONFIG_FILE" ] && grep -q -E "spider|sites" "$CONFIG_FILE"; then
+    # - name: 1.1.1 执行原有的解密脚本，
+    #   run: |
+    #      cd tool/
+    #      #python decrypt_cpu.py
+    #       #python tvbox.py "$URL" "$CONFIG_FILE" dec        
+    #       #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
+    #       #按需修改需解网址
+    #       if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
+    #       python tvbox.py "$URL" "$CONFIG_FILE" dec
+    #       fi
+    # - name: 1.1 执行 第二类解密函数，按需修改/tool目录中decrypt_cpu.py
+    #   run: |
+    #       cd tool/
+    #       #if ! [ -f "$CONFIG_FILE" ] && grep -q -E "spider|sites" "$CONFIG_FILE"; then
           
-          if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
-          python decrypt_cpu.py
-          fi
+    #       if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
+    #       python decrypt_cpu.py
+    #       fi
          
-          #cat tool/debug_raw.txt
-          #cat "$CONFIG_FILE"
-          #python build_local.py xs.json output
-          #\cp -pdr output/* ../xiaosa/
-          #python xiao.py ../xiaosa/api.json dianshi.json
-          #python xiao.py ../xiaosa/api.json jsm.json
-          #python copy_xbpq.py dianshi_with_app_sites.json
-          #\cp -pdr dianshi_with_app_sites.json ../dianshi.json
-          #\cp -pdr jsm_with_app_sites.json ../jsm.json
-          #\cp -pdr ../xiaosa/spider.jar ../jar/spider.jar
-          #rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
-          #cd ../
-          #shell: bash
+    #       #cat tool/debug_raw.txt
+    #       #cat "$CONFIG_FILE"
+    #       #python build_local.py xs.json output
+    #       #\cp -pdr output/* ../xiaosa/
+    #       #python xiao.py ../xiaosa/api.json dianshi.json
+    #       #python xiao.py ../xiaosa/api.json jsm.json
+    #       #python copy_xbpq.py dianshi_with_app_sites.json
+    #       #\cp -pdr dianshi_with_app_sites.json ../dianshi.json
+    #       #\cp -pdr jsm_with_app_sites.json ../jsm.json
+    #       #\cp -pdr ../xiaosa/spider.jar ../jar/spider.jar
+    #       #rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
+    #       #cd ../
+    #       #shell: bash
     - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址 -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
       run: |
         cd tool/
