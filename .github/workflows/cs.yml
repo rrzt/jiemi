@@ -97,7 +97,7 @@ jobs:
           -o "$CONFIG_FILE" 
         fi
     #测试开始
-     - name: 4. 强行提交最新的 cpu.json 和 cpu.jar 到仓库，按需修改输出文件名
+    - name: 4. 强行提交最新的 cpu.json 和 cpu.jar 到仓库，按需修改输出文件名
       run: |
         cd tool/
         # 移动文件到根目录（如果存在）
