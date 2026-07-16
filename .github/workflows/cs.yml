@@ -89,6 +89,12 @@ jobs:
     - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址 -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
       run: |
         cd tool/
+        echo ">>> 检查 URL 变量值 <<<"
+        echo "原始值: [$URL]"
+        echo "长度: ${#URL}"
+        echo "十六进制:"
+        echo -n "$URL" | od -c
+        echo ">>> 结束检查 <<<"        
         if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
         # curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
         # -H "Content-Type: application/x-www-form-urlencoded" \
@@ -96,7 +102,11 @@ jobs:
         #   #-d "url=$URL" \
         #   -d "url=https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json" \
         #   -o "$CONFIG_FILE" 
-        curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" -H "Content-Type: application/x-www-form-urlencoded" -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" -d "url=$URL" -o "$CONFIG_FILE"
+        curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
+          -H "Content-Type: application/x-www-form-urlencoded" \
+          -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+          -d "url=$URL" \
+          -o "$CONFIG_FILE"
         fi
     #测试开始
     - name: 4. 强行提交最新的 cpu.json 和 cpu.jar 到仓库，按需修改输出文件名
