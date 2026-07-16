@@ -93,7 +93,8 @@ jobs:
         curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
           -H "Content-Type: application/x-www-form-urlencoded" \
           -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-          -d "url=$URL" \
+          #-d "url=$URL" \
+          -d "url=https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json" \
           -o "$CONFIG_FILE" 
         fi
     #测试开始
