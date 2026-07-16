@@ -47,14 +47,14 @@ jobs:
         #pip install requests
         pip install requests demjson3 pycryptodome
  
-    - name: 1. 执行全景的解密脚本，，
-      run: |
-         cd tool/
-         #python decrypt_cpu.py
-          #python tvbox.py "$URL" "$CONFIG_FILE" dec        
-          #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
-          #按需修改需解网址
-          python tvbox_pic.py "$URL" "$CONFIG_FILE"
+    # - name: 1. 执行全景的解密脚本，，
+    #   run: |
+    #      cd tool/
+    #      #python decrypt_cpu.py
+    #       #python tvbox.py "$URL" "$CONFIG_FILE" dec        
+    #       #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
+    #       #按需修改需解网址
+    #       python tvbox_pic.py "$URL" "$CONFIG_FILE"
     
     # - name: 1.1.1 执行原有的解密脚本，
     #   run: |
@@ -88,33 +88,33 @@ jobs:
           #rm -rf dianshi_with_app_sites.json jsm_with_app_sites.json output xs.json
           #cd ../
           #shell: bash
-    - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址 -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
-      run: |
-        cd tool/
-        echo ">>> 检查 URL 变量值 <<<"
-        echo "原始值: [$URL]"
-        echo "长度: ${#URL}"
-        echo "十六进制:"
-        echo -n "$URL" | od -c
-        echo ">>> 结束检查 <<<"        
-        if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
-        curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
-          -H "Content-Type: application/x-www-form-urlencoded" \
-          -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-          --data-urlencode "url=$URL" \
-          --connect-timeout 30 \
-          --max-time 60 \
-          --retry 3 \
-          --retry-delay 5 \
-          -o "$CONFIG_FILE"
-        fi
+    # - name: 1.2 执行 第三类调用网站接口解密，按需修改源地址 -d "url=https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png" \
+    #   run: |
+    #     cd tool/
+    #     # echo ">>> 检查 URL 变量值 <<<"
+    #     # echo "原始值: [$URL]"
+    #     # echo "长度: ${#URL}"
+    #     # echo "十六进制:"
+    #     # echo -n "$URL" | od -c
+    #     # echo ">>> 结束检查 <<<"        
+    #     if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
+    #     curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
+    #       -H "Content-Type: application/x-www-form-urlencoded" \
+    #       -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+    #       --data-urlencode "url=$URL" \
+    #       --connect-timeout 30 \
+    #       --max-time 60 \
+    #       --retry 3 \
+    #       --retry-delay 5 \
+    #       -o "$CONFIG_FILE"
+    #     fi
 
-    - name: 1.3 执行 第四类饭太硬调用网站接口解密，按需修改源地址
-      run: |
-        cd tool/
-        if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
-          python tvbox_api.py "$URL" "$CONFIG_FILE"
-        fi        
+    # - name: 1.3 执行 第四类饭太硬调用网站接口解密，按需修改源地址
+    #   run: |
+    #     cd tool/
+    #     if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
+    #       python tvbox_api.py "$URL" "$CONFIG_FILE"
+    #     fi        
     - name: 2. 执行 Spider 实时检测与下载
       run: |
         cd tool/
