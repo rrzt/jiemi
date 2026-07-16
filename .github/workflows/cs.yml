@@ -12,7 +12,9 @@ jobs:
     #按需修改变量
     env:
      #原始源网址
-      URL: "https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png"
+      #URL: "https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png"
+      URL: " https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json"
+     
       #个人仓库 本地JAR地址  代理/用户名/仓库名/输出文件名  PROXY/GIT_USER/GIT_CK/输出文件名/JAR_FILE
       PROXY: "https://gh-proxy.org/https://raw.githubusercontent.com"
       GIT_USER: "rrzt"
@@ -43,14 +45,14 @@ jobs:
         #pip install requests
         pip install requests demjson3 pycryptodome
  
-    - name: 1. 执行全景的解密脚本，，
-      run: |
-         cd tool/
-         #python decrypt_cpu.py
-          #python tvbox.py "$URL" "$CONFIG_FILE" dec        
-          #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
-          #按需修改需解网址
-          python tvbox_pic.py "$URL" "$CONFIG_FILE"
+    # - name: 1. 执行全景的解密脚本，，
+    #   run: |
+    #      cd tool/
+    #      #python decrypt_cpu.py
+    #       #python tvbox.py "$URL" "$CONFIG_FILE" dec        
+    #       #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
+    #       #按需修改需解网址
+    #       python tvbox_pic.py "$URL" "$CONFIG_FILE"
     
     - name: 1.1.1 执行原有的解密脚本，
       run: |
