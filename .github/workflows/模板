@@ -1,4 +1,4 @@
-name: 测试cpu.json解密全图片 生成新Jar配置 修改（批量cpu.json、  cpu.jar，逐条 “修改” ）
+name: 机缘宝盒jybh.json解密全图片 生成新Jar配置 修改（批量cpu.json、  cpu.jar，逐条 “修改” ）
 
 on:
   schedule:
@@ -12,7 +12,7 @@ jobs:
     #按需修改全局变量，只需在此修改
     env:
      #原始源网址http://itv666.cc/aowu/config.webp  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
-      URL: "http://itv666.cc/aowu/config.webp"
+      URL: "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/ys.json"
       #URL: "https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json"
       
      
@@ -21,14 +21,14 @@ jobs:
       GIT_USER: "rrzt"
       GIT_CK: "jiemi"
       #输出文件名，按需修改
-      JAR_FILE:  "cpu.jar"
-      JSON_FILE: "cpu.json"
+      JAR_FILE:  "jybh.jar"
+      JSON_FILE: "jybh.json"
       #解密后原文存放临时文件中，不保存，如需测试保存情况，提前以前代码 name: 4. 强行提交最新的 cpu.json 和 cpu.jar 到仓库，按需修改输出文件名
       CONFIG_FILE: "tmp_config.json"
     # 固定基础域名，针对  ./a.jar文件  本地化包赋 下载路径 供后续下载
-      BASE_DOMAIN: "https://raw.githubusercontent.com/IY-CPU/IY/main/"
+      BASE_DOMAIN: "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/"
     #固定基础域名，针对./a.js ./a.json 
-      BASE_URL: "https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
+      BASE_URL: "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/"
 
 
     steps:
@@ -156,84 +156,177 @@ jobs:
         pip install dirtyjson
         
         # 使用 heredoc 嵌入 Python 代码
-        python <<'EOF'      
+        python <<'EOF'
         import json
         import os
-        INPUT_JSON =  os.environ.get("CONFIG_FILE")
+        import dirtyjson
+        
+        # ==================== 原代码（未修改） ====================
+        INPUT_JSON = os.environ.get("CONFIG_FILE")
         OUTPUT_JSON = os.environ.get("JSON_FILE")
         
-        # 你的 GitHub 仓库对应的 输出 cpu.jar 纯净链接（不带 MD5）
-        # 【请注意】：请把下面两行的“你的GitHub用户名”和“你的仓库名”修改为你实际的名称
         GITHUB_USER = os.environ.get("GIT_USER")
         GITHUB_REPO = os.environ.get("GIT_CK")
-        jar_filename = os.environ.get("JAR_FILE")   # 获取环境变量值
+        jar_filename = os.environ.get("JAR_FILE")
         BASE_PROXY = os.environ.get("PROXY")
-        # 检查是否有空值
+        
         if not GITHUB_USER or not GITHUB_REPO or not jar_filename or not BASE_PROXY:
             print("[-] 请设置完整的环境变量：GIT_USER, GIT_CK, JAR_FILE, PROXY")
-            exit(1)        
-        #本地仓库下载完成纯净JAR文件路径    
+            exit(1)
+        
         BASE_JAR_URL = f"{BASE_PROXY}/{GITHUB_USER}/{GITHUB_REPO}/main/{jar_filename}"
-  
+        
         if not os.path.exists(INPUT_JSON):
             print(f"[-] 未找到源文件 {INPUT_JSON}")
             exit(1)
-
-        # with open(INPUT_JSON, "r", encoding="utf-8") as f:
-        #     config_data = json.load(f)
-
-        import dirtyjson  # 确保已导入
-
+        
         with open(INPUT_JSON, "r", encoding="utf-8") as f:
             config_data = dirtyjson.load(f)
         
-
-        # A. 顺便把最顶层的顶级 spider 链接也改成你自己的 $JAR_FILE
+        # A. 更新顶级 spider（原代码未变）
         config_data["spider"] = BASE_JAR_URL
         print("[+] 已更新顶级 spider 链接")
-
-        # B. 遍历 sites 列表，无 jar 或 jar 为空的站点自动注入
+        
+        # ==================== 修改开始 ====================
+        # [修改] 获取 BASE_URL 环境变量（提前获取，避免循环内重复）
+        my_base_url = os.environ.get("BASE_URL")
+        print(f"[DEBUG] BASE_URL = '{my_base_url}'")
+        
+        # [新增] 递归替换所有字符串中的 ./ （处理嵌套结构）
+        def replace_all_strings(obj):
+            if isinstance(obj, dict):
+                for k, v in obj.items():
+                    obj[k] = replace_all_strings(v)
+                return obj
+            elif isinstance(obj, list):
+                return [replace_all_strings(item) for item in obj]
+            elif isinstance(obj, str):
+                if obj.strip().startswith("./"):
+                    return my_base_url + obj.strip().lstrip("./")
+                return obj
+            else:
+                return obj
+        
+        # [新增] 先对整个 sites_list 进行递归替换（包括 ext 内部的 site）
         sites_list = config_data.get("sites", [])
         if isinstance(sites_list, list):
-            updated_count = 0
-            skipped_count = 0
-            
-            for site in sites_list:
-                if isinstance(site, dict):
-                    site_name = site.get("name", "未知站点")
-                    current_jar = site.get("jar")
-
-                    # 如果已有有效的 jar 地址则跳过
-                    if current_jar and isinstance(current_jar, str) and current_jar.strip():
-                        skipped_count += 1
-                        continue
-
-                    # 没有 jar 或为空 → 注入你自己的纯净链接
-                    site["jar"] = BASE_JAR_URL
-                    updated_count += 1
-                    # 所有站点jar字段处理完毕后，统一定义基础地址,按需修改拼接地址
-                    #BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
-                    my_base_url = os.environ.get("BASE_URL") 
-    
-                    # 通用替换函数：将以 ./ 开头的字符串替换为 BASE_URL 拼接路径
-                    def replace_dot_slash(val: str) -> str:
-                        s = val.strip()
-                        if s.startswith("./"):
-                            return my_base_url + s.lstrip("./")
-                        return val
-
-                    # 遍历所有站点，对每一项所有字符串值统一替换 ./
-                    for site in sites_list:
-                        if isinstance(site, dict):
-                            for k, v in site.items():
-                                if isinstance(v, str):
-                                    site[k] = replace_dot_slash(v)
-            print(f"[+] Sites 注入完成：更新了 {updated_count} 个站点，跳过了 {skipped_count} 个已有 jar 的站点")
-
-        # C. 统一写出为最终文件名 "$JSON_FILE"，按需修改输出文件名
+            sites_list = replace_all_strings(sites_list)
+            print("[+] 已替换所有 ./ 开头的字符串（包括嵌套字段）")
+        else:
+            print("[-] sites 不是列表，退出")
+            exit(1)
+        
+        # [原代码] 遍历 sites 列表，注入 jar（只对没有 jar 的站点）
+        updated_count = 0
+        skipped_count = 0
+        for site in sites_list:
+            if isinstance(site, dict):
+                current_jar = site.get("jar")
+                if current_jar and isinstance(current_jar, str) and current_jar.strip():
+                    skipped_count += 1
+                    continue
+                site["jar"] = BASE_JAR_URL
+                updated_count += 1
+        
+        print(f"[+] Sites 注入完成：更新了 {updated_count} 个站点，跳过了 {skipped_count} 个已有 jar 的站点")
+        
+        # [修改] 将修改后的 sites_list 同步回 config_data
+        config_data["sites"] = sites_list
+        
+        # [修改] 只写入最终输出文件（原代码写入了两个文件，且第一个写的是不完整数据）
         with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
             json.dump(config_data, f, indent=2, ensure_ascii=False)
         print(f"[+] 最终配置文件已成功生成: {OUTPUT_JSON}")
+        # import json
+        # import os
+        # INPUT_JSON =  os.environ.get("CONFIG_FILE")
+        # OUTPUT_JSON = os.environ.get("JSON_FILE")
+        
+        # # 你的 GitHub 仓库对应的 输出 cpu.jar 纯净链接（不带 MD5）
+        # # 【请注意】：请把下面两行的“你的GitHub用户名”和“你的仓库名”修改为你实际的名称
+        # GITHUB_USER = os.environ.get("GIT_USER")
+        # GITHUB_REPO = os.environ.get("GIT_CK")
+        # jar_filename = os.environ.get("JAR_FILE")   # 获取环境变量值
+        # BASE_PROXY = os.environ.get("PROXY")
+        # # 检查是否有空值
+        # if not GITHUB_USER or not GITHUB_REPO or not jar_filename or not BASE_PROXY:
+        #     print("[-] 请设置完整的环境变量：GIT_USER, GIT_CK, JAR_FILE, PROXY")
+        #     exit(1)        
+        # #本地仓库下载完成纯净JAR文件路径    
+        # BASE_JAR_URL = f"{BASE_PROXY}/{GITHUB_USER}/{GITHUB_REPO}/main/{jar_filename}"
+  
+        # if not os.path.exists(INPUT_JSON):
+        #     print(f"[-] 未找到源文件 {INPUT_JSON}")
+        #     exit(1)
+
+        # # with open(INPUT_JSON, "r", encoding="utf-8") as f:
+        # #     config_data = json.load(f)
+
+        # import dirtyjson  # 确保已导入
+
+        # with open(INPUT_JSON, "r", encoding="utf-8") as f:
+        #     config_data = dirtyjson.load(f)
+        
+
+        # # A. 顺便把最顶层的顶级 spider 链接也改成你自己的 $JAR_FILE
+        # config_data["spider"] = BASE_JAR_URL
+        # print("[+] 已更新顶级 spider 链接")
+
+        # # B. 遍历 sites 列表，无 jar 或 jar 为空的站点自动注入
+        # sites_list = config_data.get("sites", [])
+        # if isinstance(sites_list, list):
+        #     updated_count = 0
+        #     skipped_count = 0
+            
+        #     for site in sites_list:
+        #         if isinstance(site, dict):
+        #             site_name = site.get("name", "未知站点")
+        #             current_jar = site.get("jar")
+
+        #             # 如果已有有效的 jar 地址则跳过
+        #             if current_jar and isinstance(current_jar, str) and current_jar.strip():
+        #                 skipped_count += 1
+        #                 continue
+
+        #             # 没有 jar 或为空 → 注入你自己的纯净链接
+        #             site["jar"] = BASE_JAR_URL
+        #             updated_count += 1
+        #             # 所有站点jar字段处理完毕后，统一定义基础地址,按需修改拼接地址
+        #             #BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
+        #             my_base_url = os.environ.get("BASE_URL") 
+        #             print(f"[DEBUG] BASE_URL = '{my_base_url}'")      # 调试输出
+        #             # 通用替换函数：将以 ./ 开头的字符串替换为 BASE_URL 拼接路径
+        #             def replace_dot_slash(val: str) -> str:
+        #                 s = val.strip()
+        #                 if s.startswith("./"):
+        #                     return my_base_url + s.lstrip("./")
+        #                 return val
+
+        #             # 遍历所有站点，对每一项所有字符串值统一替换 ./
+        #             for site in sites_list:
+        #                 if isinstance(site, dict):
+        #                     for k, v in site.items():
+        #                         if isinstance(v, str):
+        #                             site[k] = replace_dot_slash(v)
+        #             # 2. 【新增】处理 ext 嵌套中的 site 字段
+        #             if 'ext' in site and isinstance(site['ext'], dict):
+        #                 ext = site['ext']
+        #                 if 'site' in ext and isinstance(ext['site'], str):
+        #                     old_val = ext['site']
+        #                     new_val = replace_dot_slash(old_val)
+        #                     ext['site'] = new_val
+        #                     print(f"[DEBUG] 替换 ext.site: {old_val} -> {new_val}")
+            
+        #     # ===== 写回文件（确保修改持久化） =====
+        #     with open('jybh.json', 'w', encoding='utf-8') as f:
+        #         json.dump(sites_list, f, ensure_ascii=False, indent=2)
+
+        #     print(f"[+] Sites 注入完成：更新了 {updated_count} 个站点，跳过了 {skipped_count} 个已有 jar 的站点")
+
+        # # C. 统一写出为最终文件名 "$JSON_FILE"，按需修改输出文件名
+        # with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        #     json.dump(config_data, f, indent=2, ensure_ascii=False)
+        # print(f"[+] 最终配置文件已成功生成: {OUTPUT_JSON}")
  
     
     - name: 4. 强行提交最新的 cpu.json 和 cpu.jar 到仓库，按需修改输出文件名
