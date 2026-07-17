@@ -214,7 +214,7 @@ jobs:
                     # 所有站点jar字段处理完毕后，统一定义基础地址,按需修改拼接地址
                     #BASE_URL = f"https://gh-proxy.org/https://raw.githubusercontent.com/IY-CPU/IY/main/"
                     my_base_url = os.environ.get("BASE_URL") 
-    
+                    print(f"[DEBUG] BASE_URL = '{my_base_url}'")      # 调试输出
                     # 通用替换函数：将以 ./ 开头的字符串替换为 BASE_URL 拼接路径
                     def replace_dot_slash(val: str) -> str:
                         s = val.strip()
@@ -228,16 +228,19 @@ jobs:
                             for k, v in site.items():
                                 if isinstance(v, str):
                                     site[k] = replace_dot_slash(v)
-                        # ================== 新增部分 ==================
-                  # 【新增】处理 ext.site
-                  if 'ext' in site and isinstance(site['ext'], dict):
-                      ext = site['ext']
-                      if 'site' in ext and isinstance(ext['site'], str):
-                          ext['site'] = replace_dot_slash(ext['site'])
-          
-          # ====== 写回文件（确保存在） ======
-          with open('jybh.json', 'w', encoding='utf-8') as f:
-              json.dump(sites_list, f, ensure_ascii=False, indent=2)    
+                    # 2. 【新增】处理 ext 嵌套中的 site 字段
+                    if 'ext' in site and isinstance(site['ext'], dict):
+                        ext = site['ext']
+                        if 'site' in ext and isinstance(ext['site'], str):
+                            old_val = ext['site']
+                            new_val = replace_dot_slash(old_val)
+                            ext['site'] = new_val
+                            print(f"[DEBUG] 替换 ext.site: {old_val} -> {new_val}")
+            
+            # ===== 写回文件（确保修改持久化） =====
+            with open('jybh.json', 'w', encoding='utf-8') as f:
+                json.dump(sites_list, f, ensure_ascii=False, indent=2)
+
             print(f"[+] Sites 注入完成：更新了 {updated_count} 个站点，跳过了 {skipped_count} 个已有 jar 的站点")
 
         # C. 统一写出为最终文件名 "$JSON_FILE"，按需修改输出文件名
