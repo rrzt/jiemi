@@ -1,5 +1,5 @@
 {
-  "spider": "https://nos.netease.com/ysf/4e96ca1a41efeb4b3fa96a507f12b74b.png;md5;625131d4caa2f21c12a5dae01da59fd1",
+  "spider": "https://nos.netease.com/ysf/07768476e7dd53e00d257c092eef165e.png;md5;d3e19c9fd71ecef184aed17ee45d5f74",
   "logo": "https://file.icve.com.cn/file_doc/945/35/EC508FBD046D33EC4832BB76B63B6C94.gif",
   "danmaku": "http://127.0.0.1:2525/danmu?name={name}&epid={episode}",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=AowuWapper&mode=2",
@@ -17,7 +17,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "更新日期:20260715",
+      "name": "更新日期:20260718",
       "key": "Y360",
       "type": 3,
       "api": "csp_Y360Amns",
@@ -112,7 +112,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "📦①|菠菜专线",
+      "name": "📦①线|秒播",
       "key": "AppV7Fz",
       "type": 3,
       "api": "csp_AppV7Amns",
@@ -123,7 +123,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "📦②|菠菜专线",
+      "name": "📦②线|秒播",
       "key": "AppV7Xy",
       "type": 3,
       "api": "csp_AppV7Amns",
@@ -134,7 +134,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "📦③|菠菜专线",
+      "name": "📦③线|秒播",
       "key": "AppV7Zjdr",
       "type": 3,
       "api": "csp_AppV7Amns",
@@ -145,7 +145,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "📦④|菠菜专线",
+      "name": "📦④线|秒播",
       "key": "AppV7Xyz",
       "type": 3,
       "api": "csp_AppV7Amns",
@@ -156,7 +156,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "📦⑤|菠菜专线",
+      "name": "📦⑤线|秒播",
       "key": "AppV7Xnm",
       "type": 3,
       "api": "csp_AppV7Amns",
@@ -167,7 +167,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "📦⑥|菠菜专线",
+      "name": "📦⑥线|秒播",
       "key": "AppV7Mtq",
       "type": 3,
       "api": "csp_AppV7Amns",
@@ -178,7 +178,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "📦⑦|菠菜专线",
+      "name": "📦⑦线|秒播",
       "key": "AppV7Llq",
       "type": 3,
       "api": "csp_AppV7Amns",
@@ -189,7 +189,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "📦⑧|菠菜专线",
+      "name": "📦⑧线|秒播",
       "key": "AppV7Xsz",
       "type": 3,
       "api": "csp_AppV7Amns",
@@ -200,7 +200,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "📦⑨|菠菜专线",
+      "name": "📦⑨线|秒播",
       "key": "AppV7Xhr",
       "type": 3,
       "api": "csp_AppV7Amns",
@@ -211,7 +211,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "📦大师兄|秒播",
+      "name": "📦师兄|秒播",
       "key": "AppV6Dxs",
       "type": 3,
       "api": "csp_AppV6Amns",
@@ -332,7 +332,7 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "☁️Seed|4K",
+      "name": "☁️Sed|4K",
       "key": "SeedHub",
       "type": 3,
       "api": "csp_SeedHubAmns",
@@ -375,10 +375,20 @@
       "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
     },
     {
-      "name": "☁️123社区|4K",
+      "name": "☁️123|4K",
       "key": "SheQu123",
       "type": 3,
       "api": "csp_SheQu123Amns",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 0,
+      "jar": "https://gh-proxy.org/https://github.com/rrzt/jiemi/blob/main/aowu.png"
+    },
+    {
+      "name": "☁️臻影|4K",
+      "key": "SheQugy",
+      "type": 3,
+      "api": "csp_SheQugyAmns",
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0,
