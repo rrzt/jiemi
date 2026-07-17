@@ -66,7 +66,7 @@
         "dataIv": "OC1A06E197EF10CF3F6058CA7A803B5E",
         "pkg": "com.lxf.snzlcgtzxyx",
         "host": "",
-        "site": "./lib/app.txt",
+        "site": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/lib/app.txt",
         "version": "3.0.2.1",
         "decrypt": "1"
       },
@@ -199,7 +199,7 @@
         "dataIv": "OC1A06E197EF10CF3F6058CA7A803B5E",
         "pkg": "com.muyue.tool",
         "host": "",
-        "site": "./lib/az5.txt",
+        "site": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/lib/az5.txt",
         "version": "1.0.0.4",
         "decrypt": "1"
       },
@@ -220,7 +220,7 @@
         "dataIv": "OC1A06E197EF10CF3F6058CA7A803B5E",
         "pkg": "com.st.standroid",
         "host": "",
-        "site": "./lib/app_dyttandroid.txt",
+        "site": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/lib/app_dyttandroid.txt",
         "version": "5.0.0.1",
         "decrypt": "0"
       },
@@ -327,7 +327,7 @@
       "searchable": 1,
       "changeable": 1,
       "ext": {
-        "site": "./lib/9.txt",
+        "site": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/lib/9.txt",
         "dataKey": "88689667dce61725",
         "dataIv": "88689667dce61725"
       },
@@ -358,7 +358,7 @@
         "dataIv": "OC1A06E197EF10CF3F6058CA7A803B5E",
         "pkg": "com.dytiantang.one",
         "host": "",
-        "site": "./lib/app_dyttandroid.txt",
+        "site": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/lib/app_dyttandroid.txt",
         "version": "3.0.0.7",
         "decrypt": "0"
       },
