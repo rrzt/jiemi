@@ -228,6 +228,16 @@ jobs:
                             for k, v in site.items():
                                 if isinstance(v, str):
                                     site[k] = replace_dot_slash(v)
+                        # ================== 新增部分 ==================
+                    # [新增] 处理嵌套的 ext.site 字段（以及 ext 内其他可能有 ./ 的字符串）
+                    if 'ext' in site and isinstance(site['ext'], dict):
+                        ext = site['ext']
+                        # [新增] 如果 ext 中有 site 字段且为字符串，则替换
+                        if 'site' in ext and isinstance(ext['site'], str):
+                            ext['site'] = replace_dot_slash(ext['site'])
+                        # [新增] 可以继续添加其他需要替换的 ext 内部字段
+                        # 例如：if 'other' in ext and isinstance(ext['other'], str):
+                        #          ext['other'] = replace_dot_slash(ext['other'])                                
             print(f"[+] Sites 注入完成：更新了 {updated_count} 个站点，跳过了 {skipped_count} 个已有 jar 的站点")
 
         # C. 统一写出为最终文件名 "$JSON_FILE"，按需修改输出文件名
