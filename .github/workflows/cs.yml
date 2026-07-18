@@ -1,4 +1,4 @@
-name: 机缘宝盒jybh.json解密全图片 生成新Jar配置 修改（批量cpu.json、  cpu.jar，逐条 “修改” ）
+name: 测试解密全图片 生成新Jar配置 修改（批量cpu.json、  cpu.jar，逐条 “修改” ）
 
 on:
   schedule:
