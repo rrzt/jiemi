@@ -1,5 +1,5 @@
 {
-  "spider": "https://nos.netease.com/ysf/07768476e7dd53e00d257c092eef165e.png;md5;d3e19c9fd71ecef184aed17ee45d5f74",
+  "spider": "https://nos.netease.com/ysf/bb8475cf497085d16969b265a1e8e3f9.png;md5;438effad8463a53ab6fb2cf446885b54",
   "logo": "https://file.icve.com.cn/file_doc/945/35/EC508FBD046D33EC4832BB76B63B6C94.gif",
   "danmaku": "http://127.0.0.1:2525/danmu?name={name}&epid={episode}",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=AowuWapper&mode=2",
@@ -337,10 +337,10 @@
       "ext": "https://4kzn.cc"
     },
     {
-      "name": "☁️盘他|4K",
-      "key": "Panta",
+      "name": "☁️Sek|4K",
+      "key": "SheQuyd",
       "type": 3,
-      "api": "csp_PantaAmns",
+      "api": "csp_SheQuydAmns",
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0
