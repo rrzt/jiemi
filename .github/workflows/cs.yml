@@ -63,7 +63,7 @@ jobs:
           #python tvbox.py "$URL" "$CONFIG_FILE" dec        
           #http://itv666.cc/aowu/config.webp   http://我不是.摸鱼儿.cc  https://raw.githubusercontent.com/rrzt/jiemi/main/mw.json  https://raw.githubusercontent.com/IY-CPU/IY/main/%E5%A4%A9%E7%A5%9EIY.png
           #按需修改需解网址
-          if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
+          if [ ! -f "$CONFIG_FILE" ]; then
           python tvbox.py "$URL" "$CONFIG_FILE" dec
           fi
     - name: 1.1 执行 第二类解密函数，针对aou，按需修改/tool目录中decrypt_cpu.py  decrypt_pro.py
@@ -71,7 +71,7 @@ jobs:
           cd tool/
           #if ! [ -f "$CONFIG_FILE" ] && grep -q -E "spider|sites" "$CONFIG_FILE"; then
           
-          if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
+          if [ ! -f "$CONFIG_FILE" ]; then
           python decrypt_pro.py "$URL" "$CONFIG_FILE"
           fi
          
@@ -97,7 +97,7 @@ jobs:
         # echo "十六进制:"
         # echo -n "$URL" | od -c
         # echo ">>> 结束检查 <<<"        
-        if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
+        if [ ! -f "$CONFIG_FILE" ]; then
         curl -X POST "http://2015888.xyz/jiemi/get_jiemi.php" \
           -H "Content-Type: application/x-www-form-urlencoded" \
           -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
@@ -112,7 +112,7 @@ jobs:
     - name: 1.3 执行 第四类饭太硬调用网站接口解密，按需修改源地址
       run: |
         cd tool/
-        if [ ! -f "$CONFIG_FILE" ] || ! grep -q -E "spider|sites" "$CONFIG_FILE"; then
+        if [ ! -f "$CONFIG_FILE" ]; then
           python tvbox_api.py "$URL" "$CONFIG_FILE"
         fi        
     # - name: 2. 执行 Spider 实时检测与下载
