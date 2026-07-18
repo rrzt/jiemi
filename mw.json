@@ -872,10 +872,7 @@
         },
         {"key":"爱妃","name":"🔞爱妃","type":0,"api":"http://lbapiby.com/api.php/provide/vod/at/xml","searchable":1,"quickSearch":1,"filterable":1,"changeable":0},
 
-  
       {"key":"最色","name":❤️最大","type":3,"api":"csp_Zuise",    "jar": "https://gitee.com/rrzt188/home/raw/master/jar/pg250212.jar","searchable":1,"quickSearch":1,"changeable":1,"filterable":1,"ext":"null$$$1","timeout":60},  
-
-
 		{
 
       "key": "影视",
