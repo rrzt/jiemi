@@ -365,7 +365,7 @@
     },
     {
       "key": "火影视",
-      "name": "c",
+      "name": "🌀主13｜1920",
       "type": 3,
       "api": "csp_SaoHuo",
       "playerType": 2,
@@ -397,32 +397,32 @@
       "name": "🐧腾腾┃[解析]",
       "type": 3,
       "jar": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/vox.jar;md5;5cc8172c9b08185314358c20025291a8",
-      "api": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/js/drpy2.min.js",
-      "ext": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/js/腾腾.js"
+      "api": "http://rihou.cc:88/js/drpy2.min.js",
+      "ext": "http://rihou.cc:88/js/腾腾.js"
     },
     {
       "key": "奇奇",
       "name": "🐴奇奇┃[解析]",
       "type": 3,
       "jar": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/vox.jar;md5;5cc8172c9b08185314358c20025291a8",
-      "api": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/js/drpy2.min.js",
-      "ext": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/js/奇奇.js"
+      "api": "http://rihou.cc:88/js/drpy2.min.js",
+      "ext": "http://rihou.cc:88/js/奇奇.js"
     },
     {
       "key": "果果",
       "name": "🍋果果┃[解析]",
       "type": 3,
       "jar": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/vox.jar;md5;5cc8172c9b08185314358c20025291a8",
-      "api": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/js/drpy2.min.js",
-      "ext": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/js/果果.js"
+      "api": "http://rihou.cc:88/js/drpy2.min.js",
+      "ext": "http://rihou.cc:88/js/果果.js"
     },
     {
       "key": "酷酷",
       "name": "😎酷酷┃[解析]",
       "type": 3,
       "jar": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/vox.jar;md5;5cc8172c9b08185314358c20025291a8",
-      "api": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/js/drpy2.min.js",
-      "ext": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/js/酷酷.js"
+      "api": "http://rihou.cc:88/js/drpy2.min.js",
+      "ext": "http://rihou.cc:88/js/酷酷.js"
     },
     {
       "key": "夸快夸快",
