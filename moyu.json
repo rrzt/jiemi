@@ -159,6 +159,17 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/moyu.jar"
     },
     {
+      "key": "PianKu8",
+      "name": "🫡┆片库┆4K",
+      "type": 3,
+      "api": "csp_PianKu8",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "ext": "http://qkys.qukanwh.com",
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/moyu.jar"
+    },
+    {
       "key": "BuBu",
       "name": "🧸┆布布┆4K",
       "type": 3,
@@ -638,40 +649,38 @@
       "api": "csp_Ikanbot",
       "searchable": 1,
       "filterable": 0,
-      "ext": "{\"box\": \"TVBox\", \"danmu\": false}",
+      "ext": {
+        "box": "TVBox",
+        "danmu": false
+      },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/moyu.jar"
     },
     {
-      "key": "Hema",
-      "name": "🦛┆河马┆短剧",
+      "key": "HonHon",
+      "name": "🍅┆红红┆短剧",
       "type": 3,
-      "api": "csp_Hema",
+      "api": "csp_HonHon",
       "searchable": 1,
       "quickSearch": 1,
       "genre": "shortdrama",
       "filterable": 1,
+      "ext": {
+        "host": "https://short.fishcloud.top",
+        "quality": "1080p",
+        "danmu": false
+      },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/moyu.jar"
     },
     {
-      "key": "WeiguanDJ",
-      "name": "🔍┆微观┆短剧",
+      "key": "DJHub",
+      "name": "🎭┆短剧┆聚合",
       "type": 3,
-      "api": "csp_WeiguanDJ",
+      "api": "csp_DJHub",
       "searchable": 1,
-      "filterable": 1,
+      "quickSearch": 1,
       "genre": "shortdrama",
+      "filterable": 1,
       "changeable": 1,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/moyu.jar"
-    },
-    {
-      "key": "HHkk",
-      "name": "😍┆好看┆短剧",
-      "type": 3,
-      "api": "csp_HHkk",
-      "searchable": 1,
-      "quickSearch": 1,
-      "genre": "shortdrama",
-      "filterable": 1,
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/moyu.jar"
     },
     {
