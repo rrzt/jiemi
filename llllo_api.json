@@ -5,7 +5,7 @@
   "sites": [
     {
       "key": "豆瓣",
-      "name": "豆瓣｜首页",
+      "name": "豆瓣｜首页温馨提示现在只用OK跟蜂蜜壳子",
       "type": 3,
       "api": "csp_Douban",
       "searchable": 0,
@@ -38,6 +38,16 @@
       "type": 3,
       "api": "csp_YGP",
       "searchable": 0,
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
+    },
+    {
+      "key": "兄弟影视js",
+      "name": "兄弟影视｜秒播",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/js/兄弟影视.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "type": 3,
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
@@ -107,20 +117,6 @@
         "url": "https://www.douy32mf.top",
         "dataKey": "1234567887654321",
         "dataIv": "1234567887654321"
-      },
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
-      "key": "小帅",
-      "name": "小帅｜秒播",
-      "type": 3,
-      "api": "csp_AppGet",
-      "searchable": 1,
-      "changeable": 1,
-      "ext": {
-        "url": "https://ys.xiaos12.cn",
-        "dataKey": "chfgjfrhhf628vw1",
-        "dataIv": "chfgjfrhhf628vw1"
       },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
@@ -634,21 +630,6 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
-      "key": "四叶草",
-      "name": "四叶草｜APP",
-      "type": 3,
-      "api": "csp_AppQi",
-      "searchable": 1,
-      "changeable": 1,
-      "ext": {
-        "site": "https://yzysap.oss-cn-hangzhou.aliyuncs.com/kkk.txt",
-        "dataKey": "8eeObuwrmS3lRDEs",
-        "dataIv": "8eeObuwrmS3lRDEs",
-        "ua": "okhttp/3.10.0"
-      },
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
       "key": "热播影视",
       "name": "热播｜APP",
       "type": 3,
@@ -697,16 +678,6 @@
         "init": "initV122",
         "ua": "okhttp/3.10.0"
       },
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
-      "key": "洽洽影视",
-      "name": "️瓜子｜影视",
-      "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/py/瓜子.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
