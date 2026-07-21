@@ -41,14 +41,18 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
-      "key": "兄弟影视js",
-      "name": "兄弟影视｜秒播",
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/js/兄弟影视.js",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
+      "key": "飞娱影视",
+      "name": "飞鱼 ｜秒播",
       "type": 3,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/xiaosa.jar",
+      "api": "csp_Feiyu"
+    },
+    {
+      "key": "山楂影视",
+      "name": "山楂 ｜影视（ok壳子用）",
+      "type": 3,
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/xiaosa.jar",
+      "api": "csp_PianKu8"
     },
     {
       "key": "马猴影视",
@@ -103,20 +107,6 @@
         "dataIv": "FTgP4Gq8zPiqbt7M",
         "init": "initV120",
         "ua": "okhttp/3.10.0"
-      },
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
-      "key": "魔方",
-      "name": "魔方 ｜秒播",
-      "type": 3,
-      "api": "csp_AppGet",
-      "searchable": 1,
-      "changeable": 1,
-      "ext": {
-        "url": "https://www.douy32mf.top",
-        "dataKey": "1234567887654321",
-        "dataIv": "1234567887654321"
       },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
@@ -187,36 +177,6 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
-      "key": "ddys_js",
-      "name": "滴滴｜秒播",
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/js/ddys.js",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "type": 3,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
-      "key": "iysdqjs_js",
-      "name": "山地｜秒播",
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/js/iysdq.js",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "type": 3,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
-      "key": "绿色影视_js",
-      "name": "绿色影视｜秒播",
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/js/绿色影视.js",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "type": 3,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
       "key": "小鸭子看看_js",
       "name": "小鸭子看看｜秒播",
       "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/js/小鸭看看.js",
@@ -224,16 +184,6 @@
       "quickSearch": 1,
       "filterable": 1,
       "type": 3,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
-      "key": "飞鱼",
-      "name": "飞鱼｜秒播",
-      "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/py/飞鱼.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0,
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
@@ -407,29 +357,6 @@
       "changeable": 1,
       "filterable": 1,
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
-      "key": "山楂影视",
-      "name": "山楂｜影视（ok壳子用）",
-      "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/py/山楂影视.py",
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 1,
-      "filterable": 1,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
-      "key": "茶杯狐",
-      "name": "茶杯狐｜秒播",
-      "type": 3,
-      "api": "csp_XBPQ",
-      "jar": "https://pan.szfx.top/down.php/a81c03da23212c9ffc8a699465dedc8b.jar",
-      "quickSearch": 1,
-      "ext": {
-        "分类url": "https://www.china-itrade.com/zform-list/{cateId}-----------.html",
-        "分类": "电影$1#剧集$2#动漫$4#综艺$3"
-      }
     },
     {
       "key": "爱影视",
@@ -792,27 +719,6 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
-      "key": "威武┃影视",
-      "name": "威武｜秒播",
-      "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/py/威武.py",
-      "ext": "http://43.248.117.123:4680",
-      "quickSearch": 1,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
-      "key": "布布┃影视",
-      "name": "布布｜秒播",
-      "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/py/布布.py",
-      "style": {
-        "type": "rect",
-        "ratio": 1.33
-      },
-      "quickSearch": 1,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
       "key": "裤佬独家免扫4K",
       "name": "独家｜秒播",
       "type": 3,
@@ -1121,7 +1027,7 @@
     },
     {
       "key": "玩偶",
-      "name": "玩偶｜4K",
+      "name": "玩偶 ｜ 4K",
       "type": 3,
       "api": "csp_Wogg",
       "searchable": 1,
@@ -1140,7 +1046,7 @@
     },
     {
       "key": "快映",
-      "name": "快映｜4K",
+      "name": "快映 ｜ 4K",
       "type": 3,
       "api": "csp_PanWebShare",
       "searchable": 1,
@@ -1157,7 +1063,7 @@
     },
     {
       "key": "木偶",
-      "name": "木偶｜4K",
+      "name": "木偶 ｜ 4K",
       "type": 3,
       "api": "csp_PanWebShare",
       "searchable": 1,
@@ -1177,7 +1083,7 @@
     },
     {
       "key": "蜡笔",
-      "name": "蜡笔｜4K",
+      "name": "蜡笔 ｜ 4K",
       "type": 3,
       "api": "csp_PanWebShare",
       "searchable": 1,
@@ -1186,10 +1092,11 @@
       "changeable": 1,
       "ext": {
         "site": [
-          "http://www.xiaocgege.shop",
-          "http://xiaocge.fun",
+          "http://tvpanpan.site",
           "http://feimo.fun",
-          "http://xiaocgege.shop"
+          "http://xiaocgege.shop",
+          "http://www.xiaocgege.shop",
+          "https://www.xiaocge.fun"
         ]
       },
       "timeout": 60,
@@ -1197,7 +1104,7 @@
     },
     {
       "key": "至臻",
-      "name": "至臻｜4K",
+      "name": "至臻 ｜ 4K",
       "type": 3,
       "api": "csp_PanWebShare",
       "searchable": 1,
@@ -1216,7 +1123,7 @@
     },
     {
       "key": "多多",
-      "name": "多多｜4K",
+      "name": "多多｜ 4K",
       "type": 3,
       "api": "csp_PanWebShare",
       "searchable": 1,
@@ -1235,7 +1142,7 @@
     },
     {
       "key": "欧哥",
-      "name": "欧哥｜4K",
+      "name": "欧哥 ｜ 4K",
       "type": 3,
       "api": "csp_PanWebShare",
       "searchable": 1,
@@ -1255,7 +1162,7 @@
     },
     {
       "key": "二小",
-      "name": "二小｜4K",
+      "name": "二小 ｜ 4K",
       "type": 3,
       "api": "csp_PanWebShare",
       "searchable": 1,
@@ -1265,8 +1172,10 @@
       "ext": {
         "site": [
           "https://www.2xiaopan.top",
+          "https://2xiaopan.top",
           "https://www.erxiaozhan.top",
-          "https://www.2xiaozhan.top"
+          "https://www.2xiaozhan.top",
+          "https://wexwp.cc"
         ]
       },
       "timeout": 60,
@@ -1274,7 +1183,7 @@
     },
     {
       "key": "虎斑",
-      "name": "虎斑｜4K",
+      "name": "虎斑 ｜ 4K",
       "type": 3,
       "api": "csp_PanWebShare",
       "searchable": 1,
@@ -1290,8 +1199,25 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
+      "key": "短木",
+      "name": "短木｜ 4K",
+      "type": 3,
+      "api": "csp_PanWebShare",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "changeable": 1,
+      "ext": {
+        "site": [
+          "https://duanmu.laozhangone.top"
+        ]
+      },
+      "timeout": 60,
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
+    },
+    {
       "key": "夸父",
-      "name": "夸父｜4K",
+      "name": "夸父｜ 4K",
       "type": 3,
       "api": "csp_PanWebShareKF",
       "searchable": 1,
@@ -1311,22 +1237,8 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
-      "key": "盘它",
-      "name": "盘它｜4K",
-      "type": 3,
-      "api": "csp_PanWebSharePT",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0,
-      "style": {
-        "type": "list"
-      },
-      "timeout": 60,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
-    },
-    {
       "key": "123",
-      "name": "123｜4K",
+      "name": "123｜ 4K",
       "type": 3,
       "api": "csp_PanWebShare123",
       "searchable": 1,
@@ -1347,7 +1259,7 @@
     },
     {
       "key": "指南",
-      "name": "指南｜4K",
+      "name": "指南 ｜ 4K",
       "type": 3,
       "api": "csp_4KZhinan",
       "searchable": 1,
@@ -1358,7 +1270,7 @@
     },
     {
       "key": "人人",
-      "name": "人人｜4K",
+      "name": "人人｜ 4K",
       "type": 3,
       "api": "csp_RenRen",
       "searchable": 1,
@@ -1369,7 +1281,7 @@
     },
     {
       "key": "即刻",
-      "name": "即刻｜4K",
+      "name": "即刻 ｜ 4K",
       "type": 3,
       "api": "csp_Jike",
       "searchable": 1,
@@ -1383,7 +1295,7 @@
     },
     {
       "key": "双星",
-      "name": "双星｜4K",
+      "name": "双星 ｜ 4K",
       "type": 3,
       "api": "csp_ShuangXing",
       "searchable": 1,
@@ -1396,10 +1308,10 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
-      "key": "河马短剧",
-      "name": "河马｜短剧",
+      "key": "笒鬼短剧",
+      "name": "笒鬼 ｜ 短剧",
       "type": 3,
-      "api": "csp_HemaDJ",
+      "api": "csp_CenguiDJ",
       "searchable": 1,
       "changeable": 1,
       "quickSearch": 1,
@@ -1409,7 +1321,7 @@
     },
     {
       "key": "好看短剧",
-      "name": "好看｜短剧",
+      "name": "好看 ｜ 短剧",
       "type": 3,
       "api": "csp_HaokanDJ",
       "searchable": 1,
@@ -1420,10 +1332,10 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
-      "key": "围观短剧",
-      "name": "围观｜短剧",
+      "key": "星芽短剧",
+      "name": "星芽 ｜ 短剧",
       "type": 3,
-      "api": "csp_WeiguanDJ",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/lib/XYDJ.py",
       "searchable": 1,
       "changeable": 1,
       "quickSearch": 1,
@@ -1432,15 +1344,16 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
-      "key": "星芽短剧",
-      "name": "星芽｜短剧",
+      "key": "果果短剧",
+      "name": "果果 ｜ 短剧",
       "type": 3,
-      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/lib/星芽短剧.py",
-      "searchable": 1,
-      "changeable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "genre": "shortdrama",
+      "api": "csp_XBPQ",
+      "ext": {
+        "请求头": "User-Agent$MOBILE_UA",
+        "编码": "UTF-8",
+        "分类": "重生$1#穿越$2#爽剧$3#言情$4#都市$5#古装$6#悬疑$7#剧情$8",
+        "分类url": "https://www.mochadj.com/i/{cateId}-{catePg}.html"
+      },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
@@ -1547,7 +1460,7 @@
     },
     {
       "key": "哆啦新番社",
-      "name": "哆啦｜新番社",
+      "name": "哆啦 ｜新番社",
       "type": 3,
       "api": "csp_XBPQ",
       "style": {
@@ -1558,7 +1471,7 @@
     },
     {
       "key": "Anime1",
-      "name": "A1｜动漫",
+      "name": "A1｜ 动漫",
       "type": 3,
       "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/lib/ec67b9045d393737f073d2c9365533f0.js",
       "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/lib/Anime1.js",
@@ -1566,12 +1479,12 @@
     },
     {
       "key": "漫国动漫",
-      "name": "漫国丨动漫",
+      "name": "漫国 ｜动漫",
       "type": 3,
       "searchable": 1,
       "api": "csp_AppSy",
       "ext": {
-        "site": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/lib/api.txt",
+        "url": "http://114.66.27.208:806",
         "siteKey": "rectangleadsadxa",
         "listKey": "aassddwwxxllsx1x",
         "parsesKey": "aassddwwxxllsx1x"
@@ -1580,7 +1493,7 @@
     },
     {
       "key": "方舟动漫",
-      "name": "方舟丨动漫",
+      "name": "方舟 ｜ 动漫",
       "type": 3,
       "searchable": 1,
       "api": "csp_AppGet",
@@ -1593,7 +1506,7 @@
     },
     {
       "key": "曼波动漫",
-      "name": "曼波｜动漫",
+      "name": "曼波 ｜动漫",
       "type": 3,
       "searchable": 1,
       "api": "csp_AppGet",
@@ -1606,7 +1519,7 @@
     },
     {
       "key": "咕咕动漫",
-      "name": "咕咕｜动漫",
+      "name": "咕咕 ｜ 动漫",
       "type": 3,
       "searchable": 1,
       "api": "csp_AppGet",
@@ -1619,15 +1532,15 @@
     },
     {
       "key": "巴士动漫",
-      "name": "巴士｜动漫",
+      "name": "巴士｜ 动漫",
       "type": 3,
       "api": "csp_XYQHiker",
-      "ext": "https://git.yylx.win/raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/json/bsdm.json",
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/lib/BSDM.json",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
       "key": "路漫漫",
-      "name": "路漫漫｜动漫",
+      "name": "路漫漫｜ 动漫",
       "type": 3,
       "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/lib/ec67b9045d393737f073d2c9365533f0.js",
       "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/lib/LMM.js",
@@ -1635,7 +1548,7 @@
     },
     {
       "key": "去看吧",
-      "name": "去看吧｜动漫",
+      "name": "去看吧 ｜ 动漫",
       "type": 3,
       "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/lib/ec67b9045d393737f073d2c9365533f0.js",
       "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/lib/QKB.js",
