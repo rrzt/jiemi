@@ -41,6 +41,36 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
+      "key": "黄豆短剧",
+      "name": "黄豆｜短剧",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/py/黄豆短剧.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "type": 3,
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
+    },
+    {
+      "key": "共青春",
+      "name": "共青春｜秒播",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/py/共青春.py",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "type": 3,
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
+    },
+    {
+      "key": "牛牛js",
+      "name": "牛牛｜秒播",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/js/牛牛.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "type": 3,
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
+    },
+    {
       "key": "飞娱影视",
       "name": "飞鱼 ｜秒播",
       "type": 3,
