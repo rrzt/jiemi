@@ -51,6 +51,20 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
+      "key": "不戳",
+      "name": "不戳｜秒播",
+      "type": 3,
+      "api": "csp_AppGet",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": {
+        "url": "https://appcmszbc.zbc4k.app",
+        "dataKey": "pYrEkiWRYhBLTUTC",
+        "dataIv": "pYrEkiWRYhBLTUTC"
+      },
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
+    },
+    {
       "key": "共青春",
       "name": "共青春｜秒播",
       "api": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/py/共青春.py",
@@ -373,12 +387,20 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
-      "key": "爱影视",
+      "key": "爱影",
       "name": "爱影视｜秒播",
       "type": 3,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/tianjitop/llllo/main/jars/XM.png",
-      "api": "csp_AppGet",
-      "ext": "https://aysappto.oss-cn-chengdu.aliyuncs.com/q23.txt|nzEqOgYk3QzHuEP8|V122|okhttp/3.10.0"
+      "api": "csp_AppQi",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": {
+        "site": "https://aysappto.oss-cn-chengdu.aliyuncs.com/q26.txt",
+        "dataKey": "0UKM8jkasM8tdzgW",
+        "dataIv": "0UKM8jkasM8tdzgW",
+        "init": "initV120",
+        "ua": "okhttp/3.10.0"
+      },
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/llllo_api.jar"
     },
     {
       "key": "4K影院",
