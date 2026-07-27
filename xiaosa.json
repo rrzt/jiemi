@@ -1,6 +1,7 @@
 {
   "spider": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar",
   "wallpaper": "http://127.0.0.1:9978/proxy?do=wallpaper",
+  "logo": "https://pic7.fukit.cn/autoupload/gE6Y0Af2tjXBCNig6CtNDI12_FRYNb81z6UPhMWD8iI/20251224/dJkT/1080X1080/logo.jpg/webp",
   "danmaku": "http://127.0.0.1:9978/proxy?do=danmaku&name={name}&episode={episode}",
   "sites": [
     {
@@ -58,13 +59,50 @@
       "name": "三秋 • APP",
       "type": 3,
       "api": "csp_App3Q",
+      "ext": {
+        "host": "https://asd123sx23xdacsx.top",
+        "finger": "SF-C3B2B41F6EFFFF9869176CF68F6790E8F07506FC88632C94B4F5F0430D5498CA",
+        "updateId": "38b0ddfd-9aa3-8e42-5c92-a7fddd3d36e7",
+        "deviceBrand": "vivo",
+        "deviceModel": "V2309A",
+        "pkg": "com.sunshine.tv",
+        "sk": "SK-thanks",
+        "ver": "6"
+      },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
       "key": "马猴影视",
       "name": "马猴 • APP",
       "type": 3,
-      "api": "csp_AppMH",
+      "api": "csp_App3Q",
+      "ext": {
+        "host": "https://45.150.167.18:8000",
+        "finger": "SF-A962FEC75DA28D7514F2A16580334272A78AC0A8429F10C94F47C1BAFC876E3F",
+        "updateId": "43c1ef69-3748-aaeb-317f-c621c77653ee",
+        "deviceBrand": "vivo",
+        "deviceModel": "V2309A",
+        "pkg": "com.damahou.tv",
+        "sk": "SK-woniu-thanks",
+        "ver": "1"
+      },
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
+      "key": "云朵影视",
+      "name": "云朵 • APP",
+      "type": 3,
+      "api": "csp_App3Q",
+      "ext": {
+        "host": "https://ds3xy2yunsa.xyz",
+        "finger": "SF-F5F11CB15897115AE6BCFE063C288F730CA865588F572C780A3E8477D0DD3776",
+        "updateId": "175070c3-075c-468b-950a-bf575769f4f1",
+        "deviceBrand": "vivo",
+        "deviceModel": "V2309A",
+        "pkg": "com.tvcloud.io",
+        "sk": "SK-sk_13oXDZ7u9j2Tk1c0cawWVFfO",
+        "ver": "1"
+      },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -73,23 +111,6 @@
       "type": 3,
       "api": "csp_Hxq",
       "ext": "http://www.小不点.com/api/2026/fishhxq.php",
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
-    },
-    {
-      "key": "橙子99",
-      "name": "橙子 • APP",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "http://113.31.180.218:19987/app/bn",
-        "LoginPath": "/app/log",
-        "appkey": "6e8f3764a0644f3686ab5cdd57bcdf48",
-        "versionName": "4.3.1",
-        "name": "小橙子",
-        "package": "com.xchengzix.app",
-        "buildNumber": "2001",
-        "buildSignature": "99DA983CF878CEC016616175464A91A94775E20A489F07F76FCDEA1A0F2B6B45"
-      },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -357,6 +378,25 @@
         "site": "https://allinadmin.oss-cn-hangzhou.aliyuncs.com/bk/9.txt",
         "dataKey": "88689667dce61725",
         "dataIv": "88689667dce61725"
+      },
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
+      "key": "哔哩合集",
+      "name": "哔哩 • 合集",
+      "type": 3,
+      "api": "csp_Bili",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0,
+      "changeable": 0,
+      "style": {
+        "type": "rect",
+        "ratio": 1.433
+      },
+      "ext": {
+        "n": "哔哩合集",
+        "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
       },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
@@ -710,7 +750,7 @@
       "key": "星芽短剧",
       "name": "星芽 • 短剧",
       "type": 3,
-      "api": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/py/XYDJ.py",
+      "api": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/py/XYDJ.py",
       "searchable": 1,
       "changeable": 1,
       "quickSearch": 1,
@@ -876,7 +916,7 @@
       "name": "剧圈 • 影视",
       "type": 3,
       "api": "csp_XYQHiker",
-      "ext": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/json/JQYS.json",
+      "ext": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/json/JQYS.json",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -897,7 +937,7 @@
       "style": {
         "type": "list"
       },
-      "ext": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/json/DLXFS.json",
+      "ext": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/json/DLXFS.json",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -905,7 +945,7 @@
       "name": "A1 • 动漫",
       "type": 3,
       "api": "https://pan.vma.cc/pan/down.php/ec67b9045d393737f073d2c9365533f0.js",
-      "ext": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/js/Anime1.js",
+      "ext": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/js/Anime1.js",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -966,7 +1006,7 @@
       "name": "巴士 • 动漫",
       "type": 3,
       "api": "csp_XYQHiker",
-      "ext": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/json/BSDM.json",
+      "ext": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/json/BSDM.json",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -974,7 +1014,7 @@
       "name": "路漫漫 • 动漫",
       "type": 3,
       "api": "https://pan.vma.cc/pan/down.php/ec67b9045d393737f073d2c9365533f0.js",
-      "ext": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/js/LMM.js",
+      "ext": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/js/LMM.js",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -982,7 +1022,7 @@
       "name": "去看吧 • 动漫",
       "type": 3,
       "api": "https://pan.vma.cc/pan/down.php/ec67b9045d393737f073d2c9365533f0.js",
-      "ext": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/js/QKB.js",
+      "ext": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/anime/js/QKB.js",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -1043,7 +1083,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/magnet/json/DYG.json",
+      "ext": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/magnet/json/DYG.json",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -1268,44 +1308,25 @@
       "key": "爱听音乐",
       "name": "爱听 • 音乐",
       "type": 3,
-      "api": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/other/py/爱听音乐.py",
+      "api": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/other/py/爱听音乐.py",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
       "key": "网络直播",
       "name": "网络 • 直播",
       "type": 3,
-      "api": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/webcast/py/WLZB.py",
+      "api": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/webcast/py/WLZB.py",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
       "key": "哔哩直播",
       "name": "哔哩 • 直播",
       "type": 3,
-      "api": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/webcast/py/BLZB.py",
+      "api": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/webcast/py/BLZB.py",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
-      "key": "哔哩合集",
-      "name": "哔哩 • 合集",
-      "type": 3,
-      "api": "csp_Bili",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0,
-      "changeable": 0,
-      "style": {
-        "type": "rect",
-        "ratio": 1.433
-      },
-      "ext": {
-        "json": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/movie/json/BLHJ.json",
-        "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
-      },
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
-    },
-    {
-      "key": "哔哩哔哩演唱会",
+      "key": "哔哩哔哩音乐",
       "name": "哔哩 • 音乐",
       "type": 3,
       "api": "csp_Bili",
@@ -1313,7 +1334,7 @@
       "quickSearch": 0,
       "filterable": 0,
       "ext": {
-        "json": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/other/json/BLYCH.json",
+        "n": "哔哩音乐",
         "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
       },
       "style": {
@@ -1331,7 +1352,7 @@
       "quickSearch": 0,
       "filterable": 0,
       "ext": {
-        "json": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/other/json/BLTS.json",
+        "n": "哔哩听书",
         "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
       },
       "style": {
@@ -1349,7 +1370,7 @@
       "quickSearch": 0,
       "filterable": 0,
       "ext": {
-        "json": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/other/json/BLXS.json",
+        "n": "哔哩相声",
         "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
       },
       "style": {
@@ -1367,7 +1388,7 @@
       "quickSearch": 0,
       "filterable": 0,
       "ext": {
-        "json": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/other/json/BLXP.json",
+        "n": "哔哩小品",
         "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
       },
       "style": {
@@ -1385,7 +1406,7 @@
       "quickSearch": 0,
       "filterable": 0,
       "ext": {
-        "json": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/other/json/BLXQ.json",
+        "n": "哔哩戏曲",
         "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
       },
       "style": {
@@ -1403,7 +1424,7 @@
       "quickSearch": 0,
       "filterable": 1,
       "ext": {
-        "json": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/education/json/SEJY.json",
+        "json": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/education/json/SEJY.json",
         "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
       },
       "style": {
@@ -1421,7 +1442,7 @@
       "quickSearch": 0,
       "filterable": 1,
       "ext": {
-        "json": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/education/json/XXKT.json",
+        "json": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/education/json/XXKT.json",
         "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
       },
       "style": {
@@ -1439,7 +1460,7 @@
       "quickSearch": 0,
       "filterable": 1,
       "ext": {
-        "json": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/education/json/CZKT.json",
+        "json": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/education/json/CZKT.json",
         "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
       },
       "style": {
@@ -1457,7 +1478,7 @@
       "quickSearch": 0,
       "filterable": 1,
       "ext": {
-        "json": "https://wget.la/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/education/json/GZKT.json",
+        "json": "https://hk.gh-proxy.org/https://raw.githubusercontent.com/PizazzGY/NewTVBox/main/education/json/GZKT.json",
         "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie.txt"
       },
       "style": {
