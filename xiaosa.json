@@ -130,23 +130,6 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
-      "key": "双星99",
-      "name": "双星 • APP",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "http://175.178.65.250:19987/app/bn",
-        "LoginPath": "/app/log",
-        "appkey": "f66f65db127e48449f073c2c6eb0f993",
-        "versionName": "6.4.5",
-        "name": "双子星动漫",
-        "package": "com.yingfu.mobile.android.pgsp",
-        "buildNumber": "2003",
-        "buildSignature": "054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594"
-      },
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
-    },
-    {
       "key": "天堂",
       "name": "天堂 • APP",
       "type": 3,
@@ -456,6 +439,23 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
+      "key": "闪电",
+      "name": "闪电 • 4K",
+      "type": 3,
+      "api": "csp_PanWebShare",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "changeable": 1,
+      "ext": {
+        "site": [
+          "http://shandian.blog"
+        ]
+      },
+      "timeout": 60,
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
       "key": "至臻",
       "name": "至臻 • 4K",
       "type": 3,
@@ -631,21 +631,6 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
-      "key": "光鸭臻影社",
-      "name": "鸭社 • 4K",
-      "type": 3,
-      "api": "csp_PanWebShareZY",
-      "searchable": 1,
-      "quickSearch": 0,
-      "filterable": 0,
-      "style": {
-        "type": "list",
-        "ratio": 1.433
-      },
-      "timeout": 60,
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
-    },
-    {
       "key": "指南",
       "name": "指南 • 4K",
       "type": 3,
@@ -777,6 +762,13 @@
         "分类": "重生$1#穿越$2#爽剧$3#言情$4#都市$5#古装$6#悬疑$7#剧情$8",
         "分类url": "https://www.mochadj.com/i/{cateId}-{catePg}.html"
       },
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
+      "key": "云播影视",
+      "name": "云播 • 影视",
+      "type": 3,
+      "api": "csp_Tvyb",
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -962,6 +954,31 @@
       "type": 3,
       "searchable": 1,
       "api": "csp_MiaoWu",
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
+      "key": "魔都动漫",
+      "name": "魔都 • 动漫",
+      "type": 3,
+      "searchable": 1,
+      "api": "csp_MoDu",
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
+      "key": "双星99",
+      "name": "双星 • 动漫",
+      "type": 3,
+      "api": "csp_App99",
+      "ext": {
+        "host": "http://175.178.65.250:19987/app/bn",
+        "LoginPath": "/app/log",
+        "appkey": "f66f65db127e48449f073c2c6eb0f993",
+        "versionName": "6.4.5",
+        "name": "双子星动漫",
+        "package": "com.yingfu.mobile.android.pgsp",
+        "buildNumber": "2003",
+        "buildSignature": "054FA8DDA4319C6B6A9B954CA5777541C993F00B1B0BD4394F7EDE48184C4594"
+      },
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
     {
@@ -1194,6 +1211,17 @@
           "http://www.misoso.shop"
         ]
       },
+      "timeout": 60,
+      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
+    },
+    {
+      "key": "百酷",
+      "name": "百酷 • 搜索",
+      "type": 3,
+      "api": "csp_Baiku",
+      "searchable": 1,
+      "quickSearch": 0,
+      "filterable": 0,
       "timeout": 60,
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/xiaosa.jar"
     },
