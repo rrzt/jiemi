@@ -33,7 +33,7 @@
       "searchable": 1,
       "changeable": 1,
       "api": "csp_AppGet",
-      "jar": "https://zkaicc.huilan.com/aicc/api/aicc-file/miniofile/preViewPicture/aicc/1CqpaRCV_1784884059047.jpg;md5;db2c1c3ef8d2d5d3481303f21f80593c",
+      "jar": "https://oss-chat-bucket.oss-cn-beijing.aliyuncs.com/picture/console/chatres/7fd101e440d84afa8608480893e72180aFnuu1Uq.jpg;md5;739eb01b9d30692d10d0afa5c6668e24",
       "ext": "https://aysappto.oss-cn-chengdu.aliyuncs.com/q26.txt|0UKM8jkasM8tdzgW|V122|okhttp/3.10.0"
     },
     {
@@ -41,7 +41,7 @@
       "name": "❤主02┃3840",
       "type": 3,
       "api": "csp_AppGet",
-      "jar": "https://zkaicc.huilan.com/aicc/api/aicc-file/miniofile/preViewPicture/aicc/1CqpaRCV_1784884059047.jpg;md5;db2c1c3ef8d2d5d3481303f21f80593c",
+      "jar": "https://oss-chat-bucket.oss-cn-beijing.aliyuncs.com/picture/console/chatres/7fd101e440d84afa8608480893e72180aFnuu1Uq.jpg;md5;739eb01b9d30692d10d0afa5c6668e24",
       "ext": "https://yun-1316442804.cos.ap-guangzhou.myqcloud.com/603.txt|FTgP4Gq8zPiqbt7M|V122|okhttp/3.10.0"
     },
     {
@@ -66,109 +66,40 @@
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/jybh.jar"
     },
     {
-      "key": "3QQQ",
+      "key": "枫叶影视",
       "name": "❤主04┃3840",
       "type": 3,
-      "timeout": 15,
-      "api": "csp_App3Q",
-      "ext": "https://asd123sx23xdacsx.top",
-      "jar": "http://47.120.41.246:8025/vip/jar/xiaomi.php"
+      "api": "csp_FengYe",
+      "jar": "https://oss-chat-bucket.oss-cn-beijing.aliyuncs.com/picture/console/chatres/7fd101e440d84afa8608480893e72180aFnuu1Uq.jpg;md5;739eb01b9d30692d10d0afa5c6668e24",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "ext": "https://www.vip1949.com/"
     },
     {
       "key": "csp_PianKu8",
       "name": "❤主05┃3840",
       "type": 3,
-      "jar": "https://zkaicc.huilan.com/aicc/api/aicc-file/miniofile/preViewPicture/aicc/1CqpaRCV_1784884059047.jpg;md5;db2c1c3ef8d2d5d3481303f21f80593c",
+      "jar": "https://oss-chat-bucket.oss-cn-beijing.aliyuncs.com/picture/console/chatres/7fd101e440d84afa8608480893e72180aFnuu1Uq.jpg;md5;739eb01b9d30692d10d0afa5c6668e24",
       "api": "csp_PianKu8"
     },
     {
-      "key": "顾我99",
+      "key": "不戳",
       "name": "❤主06┃3840",
       "type": 3,
-      "jar": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/wyxs.php",
-      "api": "csp_App99",
-      "ext": {
-        "host": "http://117.50.200.113:19987/app/bn",
-        "LoginPath": "/app/log",
-        "appkey": "040f9b1bc5e942569b5c3e63943306ab",
-        "versionName": "4.3.1",
-        "name": "顾我追剧",
-        "package": "com.guwozhuijux.app",
-        "buildNumber": "2001",
-        "buildSignature": "5AD4436C4730FFE26910C86278B80F3E661C317FFC3616F702D20A729262624A"
-      }
-    },
-    {
-      "key": "橙子99",
-      "name": "❤主07┃3840",
-      "type": 3,
-      "api": "csp_App99",
-      "ext": {
-        "host": "http://113.31.180.218:19987/app/bn",
-        "LoginPath": "/app/log",
-        "appkey": "6e8f3764a0644f3686ab5cdd57bcdf48",
-        "versionName": "4.3.1",
-        "name": "小橙子",
-        "package": "com.xchengzix.app",
-        "buildNumber": "2001",
-        "buildSignature": "99DA983CF878CEC016616175464A91A94775E20A489F07F76FCDEA1A0F2B6B45"
-      },
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/jybh.jar"
-    },
-    {
-      "key": "听心99",
-      "name": "❤主08┃3840",
-      "type": 3,
-      "api": "csp_App99",
-      "jar": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/NJ4ZWwg7_20260518095827A465.jpg;md5;84edf41db6dbaf56b1ccdc7a11cc0ddf",
-      "ext": {
-        "host": "https://api.12321app.com",
-        "LoginPath": "/app/log",
-        "version": "0b4328287a5d953e",
-        "appkey": "a0a18659a9977a47e53442cd084b536c",
-        "versionName": "2.8.1",
-        "name": "听心视频",
-        "package": "com.iksp.adsys.jjsp",
-        "buildNumber": "2001",
-        "buildSignature": "03DD38CE4C3D62D0F0DEFACC06768D14EB382C7BD77A05B2EBF4D66E154A0D47"
-      }
-    },
-    {
-      "key": "csp_Guazi",
-      "name": "❤主09┃3840",
-      "type": 3,
-      "jar": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/vox.jar;md5;5cc8172c9b08185314358c20025291a8",
-      "api": "csp_Guazi",
+      "api": "csp_AppGet",
+      "jar": "https://ncstatic-file.clewm.net/rsrc/2026/0801/00/359c60089176c437e74e96d685b8a72e.jpg;md5;182f3ff054e1a255420840f83b553fe4",
       "searchable": 1,
-      "changeable": 1
-    },
-    {
-      "key": "fy",
-      "name": "❤主10┃3840",
-      "type": 3,
-      "api": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/lib/fy.py",
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/jybh.jar"
-    },
-    {
-      "key": "咕噜99",
-      "name": "❤主11┃3840",
-      "type": 3,
-      "api": "csp_App99",
+      "changeable": 1,
       "ext": {
-        "host": "http://103.45.132.22:19987/app/bn",
-        "LoginPath": "/app/log",
-        "appkey": "d1f0c269eab74d93821fffc9befdbbba",
-        "versionName": "1.9.5",
-        "name": "咕噜咕噜",
-        "package": "com.bd.tool.gulu",
-        "buildNumber": "2001",
-        "buildSignature": "B07C8F6DBEBD3ABEE6A4A4DE2BFBBF29A0AC3F984D532A39448EC3BF5DD36311"
-      },
-      "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/jybh.jar"
+        "url": "https://appcmszbc.zbc4k.app",
+        "dataKey": "pYrEkiWRYhBLTUTC",
+        "dataIv": "pYrEkiWRYhBLTUTC"
+      }
     },
     {
       "key": "华谊",
-      "name": "❤主12┃3840",
+      "name": "❤主07┃3840",
       "type": 3,
       "api": "csp_AppDrama",
       "searchable": 1,
@@ -189,7 +120,7 @@
     },
     {
       "key": "薯条",
-      "name": "❤主13┃3840",
+      "name": "❤主08┃3840",
       "type": 3,
       "api": "csp_AppDrama",
       "searchable": 1,
@@ -210,7 +141,7 @@
     },
     {
       "key": "KUlao永乐JS",
-      "name": "❤主14┃3840",
+      "name": "❤主09┃3840",
       "type": 3,
       "api": "https://mpimg.cn/down.php/0338609bd59d7b27226f5a269ec97936.js",
       "style": {
@@ -219,6 +150,15 @@
       },
       "changeable": 1,
       "jar": "https://gh-proxy.org/https://raw.githubusercontent.com/rrzt/jiemi/main/jybh.jar"
+    },
+    {
+      "key": "csp_Guazi",
+      "name": "❤主10┃3840",
+      "type": 3,
+      "jar": "https://raw.giteeusercontent.com/li-shengkai/qh/raw/master/vox.jar;md5;5cc8172c9b08185314358c20025291a8",
+      "api": "csp_Guazi",
+      "searchable": 1,
+      "changeable": 1
     },
     {
       "name": "🌀主01┃1920",
@@ -239,7 +179,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "jar": "https://zkaicc.huilan.com/aicc/api/aicc-file/miniofile/preViewPicture/aicc/1CqpaRCV_1784884059047.jpg;md5;db2c1c3ef8d2d5d3481303f21f80593c",
+      "jar": "https://oss-chat-bucket.oss-cn-beijing.aliyuncs.com/picture/console/chatres/7fd101e440d84afa8608480893e72180aFnuu1Uq.jpg;md5;739eb01b9d30692d10d0afa5c6668e24",
       "ext": {
         "index_url": "https://ss.trgfd.cn/cache/index/com.baiyunvideo.app.json",
         "key_api": "https://www.tangsan.fun/zx.php"
