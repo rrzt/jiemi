@@ -2,7 +2,7 @@ name: 生成东篱 dongli.json解密全 密文和网页和接口 生成新Jar配
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   
+    - cron: '0 */3 * * *'   
     - cron: '0 0 * * *' # 每天早上 8:00 自动运行
   workflow_dispatch:     # 支持手动点击按钮运行
 
